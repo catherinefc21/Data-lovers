@@ -1,0 +1,30 @@
+body{
+    background-image: url(/src/img/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;/*imagen responsive(fondo reescalable)*/
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+header img{
+    max-width: 250px;
+}
+nav{
+    text-align: center;
+}
+section{
+    background-color: rgb(187, 47, 47);
+    display: inline-block;
+    margin: 3%;
+    
+}
+section img{
+    max-width: 150px;
+}
+article{
+    justify-content: center;
+    padding-left: 80px;
+    
+}
