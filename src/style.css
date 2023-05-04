@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{font-family: 'Space Grotesk', sans-serif;}
+
 body{
     background-image: url(/src/img/fondo.jpg);
     background-size: cover;
@@ -8,23 +12,45 @@ header{
     display: flex;
     justify-content: center;
 }
+.search{
+width: 500px;
+height: 50px;
+font-size: 30px;
+
+}
 header img{
-    max-width: 250px;
+    max-width: 400px;
 }
 nav{
     text-align: center;
 }
+
+
 section{
-    background-color: rgb(187, 47, 47);
+    background-color: #b1b1b1;
     display: inline-block;
-    margin: 3%;
-    
+    margin: 5%;
+    text-align: center;
+    width: 290px;
+    height: 360px;
+    font-size: 25px;
+    border-radius: 10%;
 }
-section img{
-    max-width: 150px;
-}
+
 article{
-    justify-content: center;
     padding-left: 80px;
-    
+    text-align: center;
+    justify-content: space-between;   
 }
+
+section img{
+    width: 160px;
+    height: 220px;
+    border-radius:10%;
+    margin: 2%;
+}
+
+section img:hover{
+    transform: scale(1.15) translateZ(0);
+    background-size: 200px;}
+
