@@ -23,19 +23,23 @@ console.log (movieNames[0]);
 console.log (movieNames[1]);
 
 for (let i = 0; i < movieNames.length; i++) {
-    const movie = document.getElementById("movie" + (i+1));
-    movie.innerHTML =  '<br><img src="' + imagesMovies[i] + '">' + '<br>'+scoreMovies[i]+ '⭐' + '<br>' + movieNames[i];
-  }
+  const movie = document.getElementById("movie" + (i+1));
+  movie.innerHTML =  '<br><img src="' + imagesMovies[i] + '">' + '<br>'+scoreMovies[i]+ '⭐' + '<br>' + movieNames[i];
+}
 
 //LO QUE HICIMOS ANTES
 //const movie1= document.getElementById("movie1");
 //movie1.innerHTML= movieNames[0] + '<br><img src="' + imagesMovies[0] + '">' + '<br>'+scoreMovies[0]+ '⭐';
 
-//const movie2= document.getElementById("movie2");
-//movie2.innerHTML= movieNames[1] + '<br><img src="' + imagesMovies[1] + '">' + '<br>'+scoreMovies[1]+ '⭐';
 
-//const movie3= document.getElementById("movie3");
-//movie3.innerHTML= movieNames[2] + '<br><img src="' + imagesMovies[2] + '">' + '<br>'+scoreMovies[2]+ '⭐';
+const button=document.getElementById("button");
+button.addEventListener('click',search);
+
+function search(){
+  const searchMovie=document.getElementById("search").value.toLowerCase();
+  console.log(searchMovie);
+}
+
 
 console.log(example, data);
 
