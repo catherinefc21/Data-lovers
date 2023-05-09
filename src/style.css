@@ -38,6 +38,8 @@ header img{
 }
 nav{
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -70,5 +72,43 @@ section img{
 section:hover{
     transform: scale(1.15) translateZ(0);
     background-size: 180px;}
+
+.dropbtn {
+        background-color: #3a71ae;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 160px;
+        display: flex;
+       ;
+      }
+
+.option{
+    background-color: #ffffff;
+    color: rgb(5, 1, 1);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    justify-content: flex-start;
+    width: 100%;
+    
+}
+
+.desplegables{
+    display: flex;
+}
+.option:hover {background-color: #f1f1f1}
+      
+.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+.dropdown:hover .dropbtn {
+        background-color:#092f5a;;
+      }
 
 
