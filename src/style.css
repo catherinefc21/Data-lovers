@@ -47,7 +47,7 @@ section{
     en la parte baja del borde 3d*/
 }
 article{
-    padding-left: 80px;
+    padding-left: 0px;
     text-align: center;
     justify-content: space-between;   
 }
@@ -61,7 +61,7 @@ section:hover{
     transform: scale(1.15) translateZ(0);
     background-size: 180px;}
 .dropbtn {
-        background-color: #3a71ae;
+        background-color: #000102;
         color: white;
         padding: 10px;
         font-size: 16px;
@@ -69,6 +69,7 @@ section:hover{
         cursor: pointer;
         width: 160px;
         display: flex;
+        justify-content: center;
       }
 .option{
     background-color: #ffffff;
@@ -81,6 +82,44 @@ section:hover{
     width: 180px;
     
 }
+
+.history1{
+    width: 30%; /*para que ocupe mitad y mitad de contenedor*/
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    font-size: 10px;
+    color: #01031b;
+}
+
+h2{
+    font-size: 30px;
+}
+
+p{
+    font-size: 19px;
+    text-align: justify;
+}
+.history{
+    height: 70%; /*el 70% del body (100vb)*/
+    display: flex; /*para lograr que puedan quedar uno al lado del otro*/
+    justify-content: center;
+    padding: 20px; /*para darle espacio en los bordes a cada contenedor*/
+}
+
+.historyImg{
+    width: 30%;
+    background-color: #f0f8fd29;
+    padding: 15px 20px;
+    flex-direction: center;
+    margin-top: 60px;
+}
+
+.historyImg img{
+    width: 100%;
+    height: 100%;
+    
+}
 .options{
     color:#6d6f70
 }
@@ -88,6 +127,7 @@ section:hover{
     display: flex;
 }
 .option:hover {background-color: #f1f1f1}
+.button:hover {background-color: #f1f1f1}
       
 .dropdown {
         position: relative;
@@ -97,10 +137,31 @@ section:hover{
 .dropdown:hover .dropbtn {
         background-color:#092f5a;;
       }
-
-
-
-
+.dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+}
+      
+.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+.dropdown-content a:hover {background-color: #f1f1f1}
+      
+.dropdown:hover .dropdown-content {
+        display: block;
+}
+      
+.dropdown:hover .dropbtn {
+        background-color:  #666666;
+}
 
 
 
