@@ -76,25 +76,29 @@ section:hover{
 .dropbtn {
         background-color: #3a71ae;
         color: white;
-        padding: 16px;
+        padding: 10px;
         font-size: 16px;
         border: none;
         cursor: pointer;
         width: 160px;
         display: flex;
-       ;
       }
 
 .option{
     background-color: #ffffff;
     color: rgb(5, 1, 1);
-    padding: 16px;
+    padding: 10px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     justify-content: flex-start;
-    width: 100%;
+    width: 180px;
     
+}
+
+
+.options{
+    color:#6d6f70
 }
 
 .desplegables{
