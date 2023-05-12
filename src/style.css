@@ -71,6 +71,11 @@ section:hover{
         display: flex;
         justify-content: center;
       }
+      
+.dropbtn:hover  {
+        background-color:  #666666;
+}
+
 .option{
     background-color: #ffffff;
     color: rgb(5, 1, 1);
