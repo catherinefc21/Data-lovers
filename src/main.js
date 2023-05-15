@@ -9,6 +9,7 @@ movies.itself=movies;
 const cloneMovies=structuredClone(movies);
 console.log(movies);
 
+//contenedor Article
 const contenedor= document.getElementById("contenedor");
 //const contenedorProducer= document.getElementById("contenedorProducer");
 
