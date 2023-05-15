@@ -11,13 +11,14 @@ console.log(movies);
 
 //contenedor Article
 const contenedor= document.getElementById("contenedor");
-//const contenedorProducer= document.getElementById("contenedorProducer");
-
-//movies.forEach(producer=>{
-//  contenedorProducer.innerHTML+= `<h4> ${producer.director} </h4>`;
-//})
 movies.forEach(movie=>{
   contenedor.innerHTML+= `<section> <br><img src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+})
+
+//contenedor Lista de Movies
+const contenedor_listMovies=document.getElementById("listMovies");
+movies.forEach(listC=>{
+  contenedor_listMovies.innerHTML+= `<option value="${listC.title}" class="options">${listC.title}</option>`
 })
 
 const todas= document.getElementById("reiniciar");
@@ -84,7 +85,7 @@ typeSelect2.addEventListener("change", () => {
 })
 
 //Seleccionar el lista desplegable movie
-const typeSelect3= document.getElementById("typeMovie");
+const typeSelect3= document.getElementById("listMovies");
 typeSelect3.addEventListener("change", () => {
   const selectMovie= movies.find(pelicula=> pelicula.title===typeSelect3.value);
   if (selectMovie){
