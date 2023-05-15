@@ -5,19 +5,18 @@ import data from './data/ghibli/ghibli.js';
 //obtener lista de películas
 
 const movies= data.films;
-movies.itself=movies;
-const cloneMovies=structuredClone(movies);
-console.log(movies);
+//clonar movies para usarla abajo y ordenar de la a -z
+movies.itself = movies 
+const cloneMovies = structuredClone(movies);
 
 const contenedor= document.getElementById("contenedor");
 //const contenedorProducer= document.getElementById("contenedorProducer");
 
-//movies.forEach(producer=>{
-//  contenedorProducer.innerHTML+= `<h4> ${producer.director} </h4>`;
-//})
 movies.forEach(movie=>{
   contenedor.innerHTML+= `<section> <br><img src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
 })
+const personajes= document.getElementById("peliculas");
+//const contenedorProducer= document.getElementById("contenedorProducer");
 
 const todas= document.getElementById("reiniciar");
 
@@ -48,43 +47,43 @@ typeSelect.addEventListener("change", () => {
   });
 });
 
-//Seleccionar el lista desplegable director
+//Seleccionar director
 const typeSelect2= document.getElementById("typeDirectors");
 typeSelect2.addEventListener("change", () => {
   const selectDirector= typeSelect2.value;
   console.log(selectDirector);
+//funcion filtrar
   const filterDirector= movies.filter((director)=> {
     return director.director === selectDirector;
-  })//se deja contenedor en blanco y se muestras las películas del productor seleccionado
+  })//Lo que se tiene que mostrar en pantalla
     contenedor.innerHTML="";
     filterDirector.forEach((peli2)=>{
       contenedor.innerHTML += `<section> <br><img src="  ${peli2.poster} ">  <br>${peli2.rt_score} ⭐ <br>  ${peli2.title} </section>;`
     });
   });
-
-  const order= document.getElementById("order");
-
-  order.addEventListener("click", function(){
-
-  const orderMovies= cloneMovies.sort(function(a, b){
-  if (a.title>b.title){
-    return 1;
-  }
-  if (a.title<b.title){
-    return -1;
-  }
+//ordenar de la a-z
+const orderFilter= document.getElementById("order");
+orderFilter.addEventListener("click", function(){
+  const orderAZ= cloneMovies.sort(function (a, b) {//funcion ordenar
+    if (a.title < b.title) {
+      return -1;
+    }
+    if (a.title > b.title) {
+      return 1;
+    }
     return 0;
+  });
+  //lo que se tiene que mostrar en pantalla
+  contenedor.innerHTML=""
+  orderAZ.forEach((order)=>{
+    contenedor.innerHTML+= `<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
+  })})
+  //filtrar personajes por película
+  const peopleFilms= document.getElementById("people");
+peopleFilms.addEventListener("change", () => {
+  const selectFilms= movies.find(pelicula=> pelicula.title===peopleFilms.value);
+  console.log(selectFilms);
+
 })
-  contenedor.innerHTML="";
-  orderMovies.forEach((order)=>{
-    contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
-
-  })
-
-
-
-
-})
-
 
 console.log(example, data);
