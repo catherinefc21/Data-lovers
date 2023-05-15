@@ -19,8 +19,8 @@ const personajes= document.getElementById("peliculas");
 
 //contenedor Lista de Movies
 const contenedor_listMovies=document.getElementById("listMovies");
-movies.forEach(listC=>{
-  contenedor_listMovies.innerHTML+= `<option value="${listC.title}" class="options">${listC.title}</option>`
+movies.forEach(list=>{
+  contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="options">${list.title}</option>`
 })
 
 const todas= document.getElementById("reiniciar");
@@ -92,12 +92,19 @@ const typeSelect3= document.getElementById("listMovies");
 typeSelect3.addEventListener("change", () => {
   const selectMovie= movies.find(pelicula=> pelicula.title===typeSelect3.value);
   if (selectMovie){
-    contenedor.innerHTML="";
+    contenedor.innerHTML=`<div id="slider"></div>`;
     selectMovie.people.forEach((personaje)=>{
-      contenedor.innerHTML += `<section> <br><img src="  ${personaje.img} ">  <br>${personaje.age} ⭐ <br>  ${personaje.name} </section>;`
+      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="  ${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
     }
     )
   }
 })
+$(document).ready(function() {
+  $('.slider').slick({
+    infinite: true,
+    slidesToShow: 3, // Número de personajes a mostrar a la vez
+    slidesToScroll: 1 // Número de personajes a desplazar en cada cambio
+  });
+});
 
 console.log(example, data);
