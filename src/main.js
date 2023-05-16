@@ -9,21 +9,24 @@ const movies= data.films;
 movies.itself = movies 
 const cloneMovies = structuredClone(movies);
 
-//contenedor Article
+//contenedor PELICULAS PRINCIPALES
 const contenedor= document.getElementById("contenedor");
 movies.forEach(movie=>{
   contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
 })
-
-
+//considerar seccion pantalla principal
 console.log(contenedor);
  for( var i=0; i<contenedor.children.length; i++){
   (contenedor.children[i].addEventListener("click", function(e){
     console.log(e.target.getAttribute("moviename"));
-
-  }));
-}
-
+    const selectMovie= movies.find(pelicula=> pelicula.title===e.target.getAttribute("moviename"));
+    if (selectMovie){
+    
+      //contenedor con div id slider para contener carrusel
+      contenedor.innerHTML="";
+      selectMovie.people.forEach((personaje)=>{
+        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
+      })}}));}
 
 
 //contenedor Lista de Movies
@@ -36,9 +39,24 @@ movies.forEach(list=>{
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
 contenedor.innerHTML=""
-movies.forEach(movie1=>{
-  contenedor.innerHTML+= `<section> <br><img src="  ${movie1.poster} ">  <br>${movie1.rt_score} ⭐ <br>  ${movie1.title} </section>`
-})})
+movies.forEach(movie=>{
+  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+})
+//considerar seccion pantalla principal
+console.log(contenedor);
+ for( var i=0; i<contenedor.children.length; i++){
+  (contenedor.children[i].addEventListener("click", function(e){
+    console.log(e.target.getAttribute("moviename"));
+
+
+    
+    const selectMovie= movies.find(pelicula=> pelicula.title===e.target.getAttribute("moviename"));
+    if (selectMovie){
+      //contenedor con div id slider para contener carrusel
+      contenedor.innerHTML="";
+      selectMovie.people.forEach((personaje)=>{
+        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
+      })}}))}})
 
 //botton History estudio ghibli
 const history= document.getElementById("history");
@@ -98,22 +116,6 @@ typeSelect2.addEventListener("change", () => {
 })
 
 //Seleccionar el lista desplegable movie
-const typeSelect3= document.getElementById("listMovies");
-typeSelect3.addEventListener("change", () => {
-
-  //FUNCION filtrar personajes segun movie. 
-  const selectMovie= movies.find(pelicula=> pelicula.title===typeSelect3.value);
-  if (selectMovie){
-
-    //contenedor con div id slider para contener carrusel
-    contenedor.innerHTML=`<div id="slider"></div>`;
-    selectMovie.people.forEach((personaje)=>{
-      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="  ${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
-    }
-    )
-  }
-})
-
 //$(document).ready(function() {
   //$('.slider').slick({
   //  infinite: true,
