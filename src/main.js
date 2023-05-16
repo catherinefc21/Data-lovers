@@ -5,20 +5,22 @@ import data from './data/ghibli/ghibli.js';
 //obtener lista de películas
 
 const movies= data.films;
-movies.itself=movies;
-const cloneMovies=structuredClone(movies);
-console.log(movies);
+//clonar movies para usarla abajo y ordenar de la a -z
+movies.itself = movies 
+const cloneMovies = structuredClone(movies);
 
 //contenedor Article
 const contenedor= document.getElementById("contenedor");
 movies.forEach(movie=>{
   contenedor.innerHTML+= `<section> <br><img src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
 })
+const personajes= document.getElementById("peliculas");
+//const contenedorProducer= document.getElementById("contenedorProducer");
 
 //contenedor Lista de Movies
 const contenedor_listMovies=document.getElementById("listMovies");
-movies.forEach(listC=>{
-  contenedor_listMovies.innerHTML+= `<option value="${listC.title}" class="options">${listC.title}</option>`
+movies.forEach(list=>{
+  contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="options">${list.title}</option>`
 })
 
 const todas= document.getElementById("reiniciar");
@@ -51,14 +53,15 @@ typeSelect.addEventListener("change", () => {
   });
 });
 
-//Seleccionar el lista desplegable director
+//Seleccionar director
 const typeSelect2= document.getElementById("typeDirectors");
 typeSelect2.addEventListener("change", () => {
   const selectDirector= typeSelect2.value;
   console.log(selectDirector);
+//funcion filtrar
   const filterDirector= movies.filter((director)=> {
     return director.director === selectDirector;
-  })//se deja contenedor en blanco y se muestras las películas del productor seleccionado
+  })//Lo que se tiene que mostrar en pantalla
     contenedor.innerHTML="";
     filterDirector.forEach((peli2)=>{
       contenedor.innerHTML += `<section> <br><img src="  ${peli2.poster} ">  <br>${peli2.rt_score} ⭐ <br>  ${peli2.title} </section>;`
@@ -89,12 +92,19 @@ const typeSelect3= document.getElementById("listMovies");
 typeSelect3.addEventListener("change", () => {
   const selectMovie= movies.find(pelicula=> pelicula.title===typeSelect3.value);
   if (selectMovie){
-    contenedor.innerHTML="";
+    contenedor.innerHTML=`<div id="slider"></div>`;
     selectMovie.people.forEach((personaje)=>{
-      contenedor.innerHTML += `<section> <br><img src="  ${personaje.img} ">  <br>${personaje.age} ⭐ <br>  ${personaje.name} </section>;`
+      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="  ${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
     }
     )
   }
 })
+$(document).ready(function() {
+  $('.slider').slick({
+    infinite: true,
+    slidesToShow: 3, // Número de personajes a mostrar a la vez
+    slidesToScroll: 1 // Número de personajes a desplazar en cada cambio
+  });
+});
 
 console.log(example, data);
