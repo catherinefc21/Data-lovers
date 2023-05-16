@@ -9,10 +9,10 @@ const movies= data.films;
 movies.itself = movies 
 const cloneMovies = structuredClone(movies);
 
-//contenedor PELICULAS PRINCIPALES
+//INICIO
 const contenedor= document.getElementById("contenedor");
 movies.forEach(movie=>{
-  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
 })
 //considerar seccion pantalla principal
 console.log(contenedor);
@@ -26,7 +26,11 @@ console.log(contenedor);
       contenedor.innerHTML="";
       selectMovie.people.forEach((personaje)=>{
         contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
-      })}}));}
+      }
+      )
+    }
+  }));
+}
 
 
 //contenedor Lista de Movies
@@ -35,7 +39,7 @@ movies.forEach(list=>{
   contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="options">${list.title}</option>`
 })
 
-//botton View Movies. 
+//Contenedor peliculas principales BOTTON
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
 contenedor.innerHTML=""
@@ -47,16 +51,24 @@ console.log(contenedor);
  for( var i=0; i<contenedor.children.length; i++){
   (contenedor.children[i].addEventListener("click", function(e){
     console.log(e.target.getAttribute("moviename"));
-
-
-    
     const selectMovie= movies.find(pelicula=> pelicula.title===e.target.getAttribute("moviename"));
     if (selectMovie){
+      contenedor.innerHTML=`
+      <div id="tittle">"${selectMovie.title}"</div>
+      <div id="caracter">Description: ${selectMovie.description} <br> Director: ${selectMovie.director} <br> Producer: ${selectMovie.producer} <br> Release date: ${selectMovie.release_date} <br> Score: ${selectMovie.rt_score} ⭐ </div>`
+      ;
+       selectMovie.vehicles.forEach((vehiculo)=>{
+        contenedor.innerHTML+=`<div id="vehicles"><img src="${vehiculo.img}"</div>`
+       })
       //contenedor con div id slider para contener carrusel
-      contenedor.innerHTML="";
       selectMovie.people.forEach((personaje)=>{
         contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
-      })}}))}})
+      })
+    }
+  }));
+}
+
+})
 
 //botton History estudio ghibli
 const history= document.getElementById("history");
@@ -113,6 +125,23 @@ typeSelect2.addEventListener("change", () => {
     contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
   })
 
+})
+
+//Seleccionar pelicula para ver personajes
+const typeSelect3= document.getElementById("listMovies");
+typeSelect3.addEventListener("change", () => {
+
+  //FUNCION filtrar personajes segun movie. 
+  const selectMovie= movies.find(pelicula=> pelicula.title===typeSelect3.value);
+  if (selectMovie){
+
+    //contenedor con div id slider para contener carrusel
+    contenedor.innerHTML=`<div id="slider"></div>`;
+    selectMovie.people.forEach((personaje)=>{
+      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="  ${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
+    }
+    )
+  }
 })
 
 //Seleccionar el lista desplegable movie
