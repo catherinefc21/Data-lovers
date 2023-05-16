@@ -170,10 +170,11 @@ p{
 }
 
 .character{
+    padding-top: 40px;
     margin: 5%;
     padding-bottom: 0px;
     text-align: center;
-    width: 260px;
+    width: 220px;
     height: 320px;
     font-size: 14px;
     display: inline-block;
@@ -181,8 +182,8 @@ p{
     
 }
 .imgPeople img{
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius:50%;
     z-index: 2;
     margin: -20%;
@@ -206,8 +207,8 @@ p{
     z-index: 1;
     padding-top: 8%;
 }
-#slider{
+/*#slider{
     overflow: hidden;
     white-space: nowrap;
-}
+}*/
 
