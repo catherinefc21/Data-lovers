@@ -9,29 +9,18 @@ const movies= data.films;
 movies.itself = movies 
 const cloneMovies = structuredClone(movies);
 
-//INICIO
+//Página inicio (Bienvenida)
 const contenedor= document.getElementById("contenedor");
-movies.forEach(movie=>{
-  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+contenedor.innerHTML+= `<div class="inicio"> 
+<div class="welcome"><h2>Bienvenido(a)<br></h2><h3>¡Revisa nuestro menú y descubre todo sobre tus películas favoritas!</h3><br><br><img class="inicioImg"src="img/portada 3.png" alt=""></div>
+</div>`
+//BOTON HISTORIA
+const history= document.getElementById("history");
+history.addEventListener("click", function(){
+contenedor.innerHTML=""
+  contenedor.innerHTML+= `<div class="history"><div class="historyImg"><img src="/src/img/history.png" alt=""></div><div class="history1"><h2>GHIBLI STUDIOS</h2><p> <br> <br> For anime fans, there is nothing like the works of Studio Ghibli. This small team of animators spends years crafting each wonderful story, bringing tales of adventure, love and friendship to life through thousands of hand-drawn frames. From My Neighbor Totoro to Ponyo, each of these enchanting films allows viewers to immerse themselves in fantasy worlds.
+  <br> <br>Studio Ghibli was founded by animator, director, producer, screenwriter, author and manga artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Over the past 37 years, they have created 20 feature films (and counting), plus several short films and television commercials. Read on to learn more about the history and future of this legendary animation studio. <br> <br></p></div></div>`
 })
-//considerar seccion pantalla principal
-console.log(contenedor);
- for( var i=0; i<contenedor.children.length; i++){
-  (contenedor.children[i].addEventListener("click", function(e){
-    console.log(e.target.getAttribute("moviename"));
-    const selectMovie= movies.find(pelicula=> pelicula.title===e.target.getAttribute("moviename"));
-    if (selectMovie){
-    
-      //contenedor con div id slider para contener carrusel
-      contenedor.innerHTML="";
-      selectMovie.people.forEach((personaje)=>{
-        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
-      }
-      )
-    }
-  }));
-}
-
 
 //contenedor Lista de Movies
 const contenedor_listMovies=document.getElementById("listMovies");
@@ -53,10 +42,12 @@ console.log(contenedor);
     console.log(e.target.getAttribute("moviename"));
     const selectMovie= movies.find(pelicula=> pelicula.title===e.target.getAttribute("moviename"));
     if (selectMovie){
-      contenedor.innerHTML=`
-      <div id="tittle">"${selectMovie.title}"</div>
-      <div id="caracter">Description: ${selectMovie.description} <br> Director: ${selectMovie.director} <br> Producer: ${selectMovie.producer} <br> Release date: ${selectMovie.release_date} <br> Score: ${selectMovie.rt_score} ⭐ </div>`
-      ;
+      contenedor.innerHTML=`<div class=principal>
+      <div class=texts>
+      <div id="title" class=title>${selectMovie.title}</div>
+      <div id="caracter" class=description><b>Description:</b> ${selectMovie.description} <br><br><b>Director:</b> ${selectMovie.director} <br><br> <b>Producer:</b> ${selectMovie.producer} <br><br> <b>Release date:</b> ${selectMovie.release_date} <br><br> <b>Score:</b> ${selectMovie.rt_score} ⭐ </div></div>
+      <div class=picture><img src="${selectMovie.poster}"></div>
+      </div>`;
        selectMovie.vehicles.forEach((vehiculo)=>{
         contenedor.innerHTML+=`<div id="vehicles"><img src="${vehiculo.img}"</div>`
        })
@@ -71,12 +62,7 @@ console.log(contenedor);
 })
 
 //botton History estudio ghibli
-const history= document.getElementById("history");
-history.addEventListener("click", function(){
-contenedor.innerHTML=""
-  contenedor.innerHTML+= `<div class="history"> <div class="history1"><h2>GHIBLI STUDIOS</h2><p> <br> <br> For anime fans, there is nothing like the works of Studio Ghibli. This small team of animators spends years crafting each wonderful story, bringing tales of adventure, love and friendship to life through thousands of hand-drawn frames. From My Neighbor Totoro to Ponyo, each of these enchanting films allows viewers to immerse themselves in fantasy worlds.
-  <br> <br>Studio Ghibli was founded by animator, director, producer, screenwriter, author and manga artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Over the past 37 years, they have created 20 feature films (and counting), plus several short films and television commercials. Read on to learn more about the history and future of this legendary animation studio. <br> <br></p></div> <div class="historyImg"><img src="/src/img/history.png" alt=""></div></div>`
-})
+
 
 //Seleccionar el lista desplegable productor
 const typeSelect= document.getElementById("typeProductors");
