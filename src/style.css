@@ -35,7 +35,7 @@ nav{
     justify-content: center;
 }
 section{
-    background-color: #D9D9D9;
+    background-color: #d9d9d99f;
     display: inline-block;
     margin: 5%;
     text-align: center;
@@ -211,4 +211,85 @@ p{
     overflow: hidden;
     white-space: nowrap;
 }*/
+.principal{
+    height: 70%; /*el 70% del body (100vb)*/
+    display: flex; /*para lograr que puedan quedar uno al lado del otro*/
+    padding: 40px; /*para darle espacio en los bordes a cada contenedor*/
+
+}
+.texts{
+    width: 50%; /*para que ocupe mitad y mitad de contenedor*/
+    justify-content: center;
+    text-align: center;
+    margin-left: 10%;
+    display: block;
+    margin-top: 3%;
+
+}
+.title{
+    background-color: #D9D9D9;
+    margin-bottom: 3%;
+    padding: 15px 10px;
+    text-align: left;
+    width: 100%;
+    height: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 5%;
+    border-radius:10px;
+    
+
+}
+
+.description{
+    background-color: #D9D9D9;
+    padding: 10px;
+    text-align: justify;
+    width: 100%;
+    height: 70%;
+    font-size: 14px;
+    margin-left: 5%;
+    border-radius:10px;
+    
+}
+.picture{
+    background-color: #d9d9d9;
+    display: inline-block;
+    margin-top: 3%;
+    text-align: center;
+    width: 210px;
+    height: 295px;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 15px;
+    align-items: center;
+    margin-left: 5%;
+
+
+}
+.picture img{
+    width: 210px;
+    height: 290px;
+    border-radius:10px;
+   
+
+
+}
+.inicio{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+
+}
+.welcome{
+    font-size: 18px;
+    
+
+}
+.inicioImg{
+    width: 680px;
+    height: 120px;
+    justify-content: center;
+
+}
 
