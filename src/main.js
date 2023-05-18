@@ -39,8 +39,12 @@ console.log(contenedor);
       <div id="caracter" class=description><b>Description:</b> ${selectMovie.description} <br><br><b>Director:</b> ${selectMovie.director} <br><br> <b>Producer:</b> ${selectMovie.producer} <br><br> <b>Release date:</b> ${selectMovie.release_date} <br><br> <b>Score:</b> ${selectMovie.rt_score} ⭐ </div></div>
       <div class=picture><img src="${selectMovie.poster}"></div>
       </div>`;
+       //selectMovie.vehicles.forEach((vehiculo)=>{
+        //contenedor.innerHTML+=`<div id="vehicles"><img src="${vehiculo.img}"</div>`
+       //})
+      //contenedor con div id slider para contener carrusel
       selectMovie.people.forEach((personaje)=>{
-        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3></div> </div>`
+        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3>}</div> </div>`
       })
     }
   }));
@@ -118,13 +122,5 @@ typeSelect3.addEventListener("change", () => {
     contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
   })
 })
-//Seleccionar el lista desplegable movie
-//$(document).ready(function() {
-  //$('.slider').slick({
-  //  infinite: true,
-   // slidesToShow: 3, // Número de personajes a mostrar a la vez
-   // slidesToScroll: 1 // Número de personajes a desplazar en cada cambio
-  //});
-//});
 
 console.log(example, data);
