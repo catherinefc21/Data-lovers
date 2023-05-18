@@ -9,7 +9,7 @@ const movies= data.films;
 //PÁGINA INICIO (Bienvenida)
 const contenedor= document.getElementById("contenedor");
 contenedor.innerHTML+= `<div class="inicio"> 
-<div class="welcome"><h2>Bienvenido(a)<br></h2><h3>¡Revisa nuestro menú y descubre todo sobre tus películas favoritas!</h3><br><br><img class="inicioImg"src="img/portada 3.png" alt=""></div>
+<div class="welcome"><div class=""><h2>Bienvenido(a)<br></h2><h3>¡Revisa nuestro menú y descubre todo sobre tus películas favoritas!</h3><br><br></div><img class="inicioImg"src="img/portada 3.png" alt=""></div>
 </div>`
 //BOTON HISTORIA
 const history= document.getElementById("history");
@@ -23,7 +23,7 @@ const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
 contenedor.innerHTML=""
 movies.forEach(movie=>{
-  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
 })
 
 //Descripción extensa de la película al hacer CLICK 
@@ -97,7 +97,7 @@ typeSelect3.addEventListener("change", () => {
     //contenedor con div id slider para contener carrusel
     contenedor.innerHTML=`<div id="slider"></div>`;
     selectMovie.people.forEach((personaje)=>{
-      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="  ${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
+      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img}"></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
     }
     )
   }
