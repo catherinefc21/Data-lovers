@@ -9,7 +9,7 @@ const movies= data.films;
 //PÁGINA INICIO (Bienvenida)
 const contenedor= document.getElementById("contenedor");
 contenedor.innerHTML+= `<div class="inicio"> 
-<div class="welcome"><h2>Bienvenido(a)<br></h2><h3>¡Revisa nuestro menú y descubre todo sobre tus películas favoritas!</h3><br><br><img class="inicioImg"src="img/portada 3.png" alt=""></div>
+<div class="welcome"><div class=""><h2>Bienvenido(a)<br></h2><h3>¡Revisa nuestro menú y descubre todo sobre tus películas favoritas!</h3><br><br></div><img class="inicioImg"src="img/portada 3.png" alt=""></div>
 </div>`
 //BOTON HISTORIA
 const history= document.getElementById("history");
