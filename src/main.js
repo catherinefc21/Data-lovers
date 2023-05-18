@@ -33,7 +33,7 @@ const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
 contenedor.innerHTML=""
 movies.forEach(movie=>{
-  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="  ${movie.poster} ">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+  contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
 })
 //considerar seccion pantalla principal
 console.log(contenedor);
@@ -53,7 +53,7 @@ console.log(contenedor);
        })
       //contenedor con div id slider para contener carrusel
       selectMovie.people.forEach((personaje)=>{
-        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
+        contenedor.innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img}"></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
       })
     }
   }));
@@ -124,7 +124,7 @@ typeSelect3.addEventListener("change", () => {
     //contenedor con div id slider para contener carrusel
     contenedor.innerHTML=`<div id="slider"></div>`;
     selectMovie.people.forEach((personaje)=>{
-      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="  ${personaje.img} "></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
+      document.getElementById("slider").innerHTML += `<div class= "character"> <br><div class=imgPeople><img src="${personaje.img}"></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
     }
     )
   }
