@@ -205,7 +205,7 @@ p{
     border-radius: 60px 30px 60px 30px;
     box-shadow: 0 1px 1px rgba(0,0,0,1); /*sombreado leve 
     en la parte baja del borde 3d*/
-    background-color: #d9d9d9b7;
+    background-color: #d9d9d98c;
     z-index: 1;
     padding-top: 8%;
 }
@@ -283,8 +283,12 @@ p{
     margin-top: 2%;
 
 }
+.textWelcome{
+    background-color:#d9d9d983;
+    border-radius: 18px;
+}
 .welcome{
-    font-size: 18px;
+    font-size: 16px;
     
 
 }
