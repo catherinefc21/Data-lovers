@@ -27,12 +27,14 @@ header{
     padding-left: 50px;
 }
 header img{
-    max-width: 320px;
+    max-width: 30%;
 }
 nav{
     text-align: center;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+
 }
 section{
     background-color: #d9d9d99f;
@@ -281,16 +283,13 @@ p{
     margin-top: 2%;
 
 }
-.textWelcome{
-    background-color: #d4d4d4;
-}
 .welcome{
     font-size: 18px;
     
 
 }
 .inicioImg{
-    width: 700px;
+    width: 680px;
     height: 120px;
     justify-content: center;
 
