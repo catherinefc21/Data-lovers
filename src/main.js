@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
-import { filterProducer, orderMovies, filterDirector, selectMovie, ageProm } from './data.js';
+
+import { filterProducer, orderAz, filterDirector, selectMovie, ageProm } from './data.js';
+
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 
@@ -85,6 +87,7 @@ typeSelect2.addEventListener("change", () => {
 
 //LISTA DESPLEGABLE CON NOMBRES DE PELÍCULA PARA VER PERSONAJES(VIEW PEOPLE)
 const contenedor_listMovies=document.getElementById("listMovies");
+contenedor_listMovies.innerHTML=`<option value="Options" class="options">Please select</option>`
 movies.forEach(list=>{
   contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="option">${list.title}</option>`
 })
@@ -104,16 +107,12 @@ typeSelect3.addEventListener("change", () => {
 
 //BOTON ORDENAR A-Z(clonar movies para usar esa constant y ordenarla)
 movies.itself = movies 
-const cloneMovies = structuredClone(movies);
-const order= document.getElementById("order");
-
-const ordenarPeliculas= orderMovies(cloneMovies);
-console.log(ordenarPeliculas);
-order.addEventListener("click", ()=>{ordenarPeliculas,
-
-//contenedor vacío. Aplicar función de ordenado para que se muestren las películas en el contenedor.
+const typeOrder= document.getElementById("typeOrder");
+typeOrder.addEventListener("change", () => {
+  const selectOrder= typeOrder.value;
+  const ordenarPeliculas1= orderAz(movies,selectOrder)
 contenedor.innerHTML="",
-ordenarPeliculas.forEach((order)=>{
+ordenarPeliculas1.forEach((order)=>{
   contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
 })
 });

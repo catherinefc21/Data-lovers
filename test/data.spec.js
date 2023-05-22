@@ -1,18 +1,20 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterProducer} from '../src/data.js';
+import data from './data/ghibli/ghibli.js';
 
 
-describe('example', () => {
+
+describe('filterProducer', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterProducer).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `filterProducer filtra correctamente los productores`', () => {
+    expect(filterProducer(data,selectProductor)).toBe(filterProducer);
   });
 });
 
 
-describe('anotherExample', () => {
+/*describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -20,4 +22,5 @@ describe('anotherExample', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});
+})
+*/
