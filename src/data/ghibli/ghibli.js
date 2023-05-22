@@ -226,7 +226,7 @@ export default {
         {
           "id": "d5df3c04-f355-4038-833c-83bd3502b6b9",
           "name": "Mei Kusakabe",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/b/b5/God_Jul_Mei_%C3%B6nskar_fr%C3%A5n_Tomten.jpg",
+          "img": "https://www.anime-planet.com/images/characters/mei-kusakabe-2137.jpg",
           "gender": "Female",
           "age": "4",
           "eye_color": "Brown",
@@ -296,7 +296,7 @@ export default {
         {
           "id": "c491755a-407d-4d6e-b58a-240ec78b5061",
           "name": "Chibi Totoro",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c5/Little_Totoro_spirit_moving.gif",
+          "img": "http://orig06.deviantart.net/1d0a/f/2010/282/6/0/600a2421130d589a5a6e757e848969bf-d30e5nj.jpg",
           "gender": "NA",
           "age": "",
           "eye_color": "Black",
@@ -510,7 +510,7 @@ export default {
         {
           "id": "227c01a6-4e29-4582-bc4b-35106a704ab0",
           "name": "Mrs. Yokokawa",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/39/SeitaMother.png",
+          "img": "https://cdn.myanimelist.net/images/characters/6/423031.jpg",
           "gender": "Female",
           "age": "Adult",
           "eye_color": "Black",
@@ -520,7 +520,7 @@ export default {
         {
           "id": "023306e3-9fc6-4d1d-b681-d4649dcbfff9",
           "name": "Kiyoshi Yokokawa",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/f/f6/SeitaFather3.jpg",
+          "img": "https://i.pinimg.com/originals/3a/a7/0a/3aa70a9c436c91a15405babd7e32f37e.jpg",
           "gender": "Male",
           "age": "40",
           "eye_color": "Black",
@@ -530,7 +530,7 @@ export default {
         {
           "id": "0e18b23d-1f21-4a83-a6de-f01147624875",
           "name": "Seita's Aunt",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/09/SeitaAunt.jpg",
+          "img": "https://thicc.mywaifulist.moe/waifus/39847/bc436226f2fcb591ac0de4cdf3033bc8ccac1b17bbd4ec9077bc2404d1794274_thumb.jpg",
           "gender": "Female",
           "age": "Elder",
           "eye_color": "Black",

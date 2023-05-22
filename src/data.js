@@ -10,15 +10,15 @@ export const selectMovie = (data, respuestaUsuario) => {
   const selectMovie = data.find(pelicula => pelicula.title === respuestaUsuario);
   return selectMovie;
 }
+
 export const orderMovies= (data) => {
   const orderMovies= data.sort((a, b)=> {
-  if (a.title>b.title){
-    return 1;
-  }if (a.title<b.title){
-    return -1;
-  }
-    return 0;
-    
+    if (a.title>b.title){
+      return 1;
+    }if (a.title<b.title){
+      return -1;
+    }
+    return 0; 
   });
   return orderMovies;
 }

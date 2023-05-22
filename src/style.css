@@ -1,66 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400&display=swap');
 *{font-family: 'Aleo', serif;}
+
 body{
     background-image: url(/src/img/fondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;/*imagen responsive(fondo reescalable)*/
 }
+
 header{
     display: flex;
     justify-content: center;
 }
-.search{
-    width: 500px;
-    height: 25px;
-    font-size: 16px;
-    padding: 10px 15px;
-    border-radius: 20px;
-    background-color: #D9D9D9;
-    border: #D9D9D9;
-    outline: none; /*quitar borde de los input*/
-    box-shadow: 0 2px 2px rgba(0,0,0,1); /*sombreado leve 
-    en la parte baja del borde 3d*/
-    background-image:url(img/lupa.png);
-    background-position: 5px 1px;
-    background-repeat: no-repeat;
-    padding-left: 50px;
-}
+
 header img{
-    max-width: 320px;
+    max-width: 30%;
 }
+
 nav{
     text-align: center;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
-section{
-    background-color: #d9d9d99f;
-    display: inline-block;
-    margin: 5%;
-    text-align: center;
-    width: 220px;
-    height: 320px;
-    font-size: 14px;
-    border-radius: 10%;
-    box-shadow: 0 1px 1px rgba(0,0,0,1); /*sombreado leve 
-    en la parte baja del borde 3d*/
-}
-article{
-    padding-left: 0px;
-    text-align: center;
-    justify-content: space-between;   
-    
-}
-section img{
-    width: 180px;
-    height: 240px;
-    border-radius:10%;
-    margin: 2%;
-}
-section:hover{
-    transform: scale(1.15) translateZ(0);
-    background-size: 180px;}
+/*LISTAS DESPLEGABLES*/
 .dropbtn {
         background-color: #000102;
         color: white;
@@ -77,6 +40,43 @@ section:hover{
         background-color:  #666666;
 }
 
+.options{
+    color:#6d6f70
+}
+.desplegables{
+    display: flex;
+}
+.option:hover {background-color: #f1f1f1}
+.button:hover {background-color: #f1f1f1}
+      
+/*ESTO HACE QUE ESTE ESCONDIDO BAJO EL TITULO*/
+.dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+}
+/* BORRAR? ESTOO NO HACE NADA?
+.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+.dropdown-content a:hover {background-color: #f1f1f1}  */ 
+
+.dropdown:hover .dropdown-content {
+        display: block;
+}
+      
+.dropdown:hover .dropbtn {
+        background-color:  #666666;
+}
+
+/*OPCIONES LISTAS DESPLEGABLES*/
 .option{
     background-color: #ffffff;
     color: rgb(5, 1, 1);
@@ -86,9 +86,61 @@ section:hover{
     cursor: pointer;
     justify-content: flex-start;
     width: 180px;
-    
 }
 
+/*CONTENEDOR PRINCIPAL*/
+article{
+    padding-left: 0px;
+    text-align: center;
+    justify-content: space-between;     
+}
+
+/*PAGINA INICIO*/
+.inicio{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+
+}
+.textWelcome{
+    background-color:#d9d9d983;
+    border-radius: 18px;
+}
+.welcome{
+    font-size: 16px;
+}
+.inicioImg{
+    width: 700px;
+    height: 120px;
+    justify-content: center;
+}
+
+
+/*SECCION PRINCIPAL DE CONTENEDOR DE PELICULAS, PARA VER TODAS Y TAMBIEN SELECCION DIRECTOR Y PRODUCTOR*/
+section{
+    background-color: #d9d9d99f;
+    display: inline-block;
+    margin: 5%;
+    text-align: center;
+    width: 220px;
+    height: 320px;
+    font-size: 14px;
+    border-radius: 10%;
+    box-shadow: 0 1px 1px rgba(0,0,0,1); /*sombreado leve 
+    en la parte baja del borde 3d*/
+}
+
+section img{
+    width: 180px;
+    height: 240px;
+    border-radius:10%;
+    margin: 2%;
+}
+section:hover{
+    transform: scale(1.15) translateZ(0);
+    background-size: 180px;}
+
+/*BUTTON HISTORIA*/
 .history1{
     width: 30%; /*para que ocupe mitad y mitad de contenedor*/
     justify-content: center;
@@ -97,7 +149,6 @@ section:hover{
     font-size: 10px;
     color: #01031b;
 }
-
 h2{
     font-size: 30px;
 }
@@ -126,49 +177,115 @@ p{
     height: 100%;
     
 }
-.options{
-    color:#6d6f70
+
+/*SECCION PELICULAS Y VER DESCRIPCION*/
+
+.principal{
+    height: 70%; /*el 70% del body (100vb)*/
+    display: flex; /*para lograr que puedan quedar uno al lado del otro*/
+    padding: 40px; /*para darle espacio en los bordes a cada contenedor*/
+    align-content: center;
+
 }
-.desplegables{
-    display: flex;
+.texts{
+    width: 50%; /*para que ocupe mitad y mitad de contenedor*/
+    justify-content: center;
+    text-align: center;
+    margin-left: 10%;
+    display: block;
+    margin-top: 3%;
+
 }
-.option:hover {background-color: #f1f1f1}
-.button:hover {background-color: #f1f1f1}
-      
-.dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      
-.dropdown:hover .dropbtn {
-        background-color:#092f5a;;
-      }
-.dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-}
-      
-.dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      
-.dropdown-content a:hover {background-color: #f1f1f1}
-      
-.dropdown:hover .dropdown-content {
-        display: block;
-}
-      
-.dropdown:hover .dropbtn {
-        background-color:  #666666;
+.title{
+    background-color: #D9D9D9;
+    margin-bottom: 3%;
+    padding: 15px 10px;
+    text-align: left;
+    width: 100%;
+    height: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius:10px;
+    margin-left: -2%;
 }
 
+.description{
+    background-color: #D9D9D9;
+    padding: 10px;
+    text-align: justify;
+    width: 100%;
+    height: 75%;
+    font-size: 14px;
+    border-radius:10px;
+    overflow: hidden;
+    margin-left: -2%;
+    
+}
+.picture{
+    background-color: #d9d9d9;
+    display: inline-block;
+    margin-top: 3%;
+    text-align: center;
+    width: 25%;
+    height: 85%;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 15px;
+    align-items: center;
+    margin-left: 4%;
+
+
+}
+.picture img{
+    width: 100%;
+    height: 100%;
+    border-radius:10px;
+
+}
+.tittlePeople{
+    background-color: #D9D9D9;
+    margin-bottom: 3%;
+    padding: 15px 20px;
+    text-align: center;
+    width: 87%;
+    height: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 5.5%;
+    border-radius:10px;
+
+}
+.characterName{
+    display: inline-block;
+    flex-wrap: wrap;
+    background-color: #d9d9d9;
+    padding: 0px 8px;
+    border-radius: 4%; 
+    margin-left: -3px;
+}
+
+.nameImg img:hover{
+    transform: scale(1.4) translateZ(0);
+
+}
+
+.name{
+    font-size: 10px;
+    max-width: 80px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.nameImg img{
+    width: 80px;
+    height: 100px;
+    margin-bottom: -20%;
+    border-radius: 10%;
+}
+
+/*SELECCIONAR PELICULA Y VER PERSONAJES*/
 .character{
     padding-top: 40px;
     margin: 5%;
@@ -207,93 +324,7 @@ p{
     z-index: 1;
     padding-top: 8%;
 }
-/*#slider{
-    overflow: hidden;
-    white-space: nowrap;
-}*/
-.principal{
-    height: 70%; /*el 70% del body (100vb)*/
-    display: flex; /*para lograr que puedan quedar uno al lado del otro*/
-    padding: 40px; /*para darle espacio en los bordes a cada contenedor*/
-
-}
-.texts{
-    width: 50%; /*para que ocupe mitad y mitad de contenedor*/
-    justify-content: center;
-    text-align: center;
-    margin-left: 10%;
-    display: block;
-    margin-top: 3%;
-
-}
-.title{
-    background-color: #D9D9D9;
-    margin-bottom: 3%;
-    padding: 15px 10px;
-    text-align: left;
-    width: 100%;
-    height: 10%;
-    font-size: 25px;
-    font-weight: 600;
-    margin-left: 5%;
-    border-radius:10px;
-    
-
-}
-
-.description{
-    background-color: #D9D9D9;
-    padding: 10px;
-    text-align: justify;
-    width: 100%;
-    height: 70%;
-    font-size: 14px;
-    margin-left: 5%;
-    border-radius:10px;
-    
-}
-.picture{
-    background-color: #d9d9d9;
-    display: inline-block;
-    margin-top: 3%;
-    text-align: center;
-    width: 210px;
-    height: 295px;
-    font-size: 14px;
-    border-radius: 10px;
-    padding: 15px;
-    align-items: center;
-    margin-left: 5%;
 
 
-}
-.picture img{
-    width: 210px;
-    height: 290px;
-    border-radius:10px;
-   
 
-
-}
-.inicio{
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-
-}
-.textWelcome{
-    background-color:#d9d9d983;
-    border-radius: 18px;
-}
-.welcome{
-    font-size: 16px;
-    
-
-}
-.inicioImg{
-    width: 700px;
-    height: 120px;
-    justify-content: center;
-
-}
 
