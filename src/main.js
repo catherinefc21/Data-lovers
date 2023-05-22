@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { filterProducer, orderMovies, filterDirector, selectMovie } from './data.js';
+import { filterProducer, orderMovies, filterDirector, selectMovie, ageProm } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 
@@ -44,10 +44,12 @@ todas.addEventListener("click", function(){
       <div id="caracter" class=description><b>Description:</b> ${selectMovieTarjet.description} <br><br><b>Director:</b> ${selectMovieTarjet.director} <br><br> <b>Producer:</b> ${selectMovieTarjet.producer} <br><br> <b>Release date:</b> ${selectMovieTarjet.release_date} <br><br> <b>Score:</b> ${selectMovieTarjet.rt_score} ⭐ </div></div>
       <div class=picture><img src="${selectMovieTarjet.poster}"></div>
       </div> <div class="tittlePeople">Characters</div>`;
-        //selectMovie.vehicles.forEach((vehiculo)=>{
-        //contenedor.innerHTML+=`<div id="vehicles"><img src="${vehiculo.img}"</div>`
-        //})
-        //contenedor con div id slider para contener carrusel
+
+        //PROMEDIO
+        const agePromedio=ageProm(data,selectMovieTarjet.people)
+        //MOSTRAR EN PANTALLA 
+        contenedor.innerHTML+= `<div class="promedio">Promedio edad: ${agePromedio}</div>`
+        
         selectMovieTarjet.people.forEach((personaje)=>{
           contenedor.innerHTML += `<div class= "characterName"> <br><div class=nameImg><img src="${personaje.img} "></div> <br><div class=name><h3>${personaje.name}</h3></div> </div>`
         })
