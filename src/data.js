@@ -11,14 +11,29 @@ export const selectMovie = (data, respuestaUsuario) => {
   return selectMovie;
 }
 
-export const orderMovies= (data) => {
-  const orderMovies= data.sort((a, b)=> {
-    if (a.title>b.title){
-      return 1;
-    }if (a.title<b.title){
-      return -1;
-    }
-    return 0; 
-  });
-  return orderMovies;
-}
+export const orderAz= (data, respuestaUsuario) => {
+  if (respuestaUsuario==="A-Z"){
+    const orderMovies= data.sort((a, b)=> {
+      if (a.title>b.title){
+        return 1;
+      }if (a.title<b.title){
+        return -1;
+      }
+      return 0; 
+    
+    });
+    return orderMovies;
+    
+  }
+    else if(respuestaUsuario==="Z-A"){
+      const orderMovies2= data.sort((a, b)=> {
+        if (a.title<b.title){
+          return 1;
+        }if (a.title>b.title){
+          return -1;
+        }
+        return 0; 
+      });
+      return orderMovies2;
+    }};
+    
