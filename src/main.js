@@ -49,6 +49,8 @@ todas.addEventListener("click", function(){
 
         //PROMEDIO
         const agePromedio=ageProm(data,selectMovieTarjet.people)
+        console.log(selectMovieTarjet.people);
+        console.log(agePromedio);
         //MOSTRAR EN PANTALLA 
         contenedor.innerHTML+= `<div class="promedio">Promedio edad: ${agePromedio}</div>`
         
@@ -67,7 +69,8 @@ typeSelect.addEventListener("change", () => {
   const selectProductor= typeSelect.value;
  
   const filtroProductor= filterProducer(movies,selectProductor);
-  console.log(filtroProductor)
+  console.log(selectProductor);
+  console.log(filtroProductor);
   contenedor.innerHTML="",
   filtroProductor.forEach((peli)=>{
     contenedor.innerHTML += `<section> <br><img src="${peli.poster}">  <br>${peli.rt_score} ⭐ <br>  ${peli.title} </section>`
@@ -80,6 +83,8 @@ typeSelect2.addEventListener("change", () => {
   const selectDirector= typeSelect2.value;
   //FUNCION filtra el director seleccionado
   const filtroDirector= filterDirector(movies, selectDirector);
+  console.log(selectDirector);
+  console.log(filtroDirector);
   contenedor.innerHTML="";
   filtroDirector.forEach((peli2)=>{
     contenedor.innerHTML += `<section> <br><img src="  ${peli2.poster} ">  <br>${peli2.rt_score} ⭐ <br>  ${peli2.title} </section>`  });
@@ -96,6 +101,7 @@ const typeSelect3= document.getElementById("listMovies");
 typeSelect3.addEventListener("change", () => {
   const selectFilms= typeSelect3.value;
   const seleccionarMovie= selectMovie(movies, selectFilms);
+  console.log(selectFilms);
   console.log(seleccionarMovie);
   //contenedor con div id slider para contener carrusel
   contenedor.innerHTML=`<div id="slider"></div>`;
@@ -111,10 +117,12 @@ const typeOrder= document.getElementById("typeOrder");
 typeOrder.addEventListener("change", () => {
   const selectOrder= typeOrder.value;
   const ordenarPeliculas1= orderAz(movies,selectOrder)
-contenedor.innerHTML="",
-ordenarPeliculas1.forEach((order)=>{
-  contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
-})
+  console.log(selectOrder);
+  console.log(ordenarPeliculas1);
+  contenedor.innerHTML="",
+  ordenarPeliculas1.forEach((order)=>{
+    contenedor.innerHTML +=`<section> <br><img src="${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
+  })
 });
 
 
