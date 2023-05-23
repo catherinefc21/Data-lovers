@@ -14,29 +14,21 @@ export const selectMovie = (data, respuestaUsuario) => {
 }
 
 export const orderAz= (data, respuestaUsuario) => {
+  const orderMovies= data.sort((a, b)=> {
+    if (a.title>b.title){
+      return 1;
+    }if (a.title<b.title){
+      return -1;
+    } 
+  });
   if (respuestaUsuario==="A-Z"){
-    const orderMovies= data.sort((a, b)=> {
-      if (a.title>b.title){
-        return 1;
-      }if (a.title<b.title){
-        return -1;
-      } 
-    });
     return orderMovies;
-    
   }
   else if(respuestaUsuario==="Z-A"){
-    const orderMovies2= data.sort((a, b)=> {
-      if (a.title<b.title){
-        return 1;
-      }if (a.title>b.title){
-        return -1;
-      } 
-    });
-    return orderMovies2;
+    return orderMovies.reverse();
   }};
 
-export const ageProm=(data,respuestaUsuarioPeople)=>{
+export const ageProm=(data, respuestaUsuarioPeople)=>{
   //const ageC es un array con age ['13', '13', '60', '33', 'Unspecified/Elderly', 'Unspecified/Adult', 'Unspecified/Adult'] 
   const data1=data;
   console.log(data1);
@@ -50,6 +42,6 @@ export const ageProm=(data,respuestaUsuarioPeople)=>{
   //age prom realiza division por cantidad de elementos del array y toFixed solo deja dos decimales
   const ageProm= (ageSuma/ageFiltrado.length).toFixed(2);
   return ageProm;
-}
+};
     
 

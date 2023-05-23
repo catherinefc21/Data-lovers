@@ -8,7 +8,6 @@ describe('filterProducer', () => {
   it('is a function', () => {
     expect(typeof filterProducer).toBe('function');
   });
-
   it('returns `filterProducer filtra correctamente los productores`', () => {
     expect (filterProducer(films,"Isao Takahata")).toStrictEqual([
       {
