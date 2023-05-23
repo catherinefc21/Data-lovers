@@ -43,7 +43,7 @@ todas.addEventListener("click", function(){
   movies.forEach(movie=>{
     document.getElementById("contenedor2").innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
   })
-
+  //ORDENAR DE LA A-Z Y Z-A
   movies.itself = movies 
   const clone=structuredClone(movies);
   const typeOrder= document.getElementById("typeOrder");
@@ -58,9 +58,7 @@ todas.addEventListener("click", function(){
     })
   });
 
-
-
-  //Descripción extensa de la película al hacer CLICK y ORDEN DE A-Z Y Z-A 
+  //Descripción extensa de la película al hacer CLICK
   // eslint-disable-next-line no-console
   console.log(contenedor);
   document.getElementById("contenedor2").addEventListener("click", function(e) {
@@ -73,11 +71,11 @@ todas.addEventListener("click", function(){
         const selectMovieTarjet= selectMovie(movies, movieTarjet);
         if (selectMovieTarjet){
           contenedor.innerHTML=`<div class=principal>
-      <div class=texts>
-      <div id="title" class=title>${selectMovieTarjet.title}</div>
-      <div id="caracter" class=description><b>Description:</b> ${selectMovieTarjet.description} <br><br><b>Director:</b> ${selectMovieTarjet.director} <br><br> <b>Producer:</b> ${selectMovieTarjet.producer} <br><br> <b>Release date:</b> ${selectMovieTarjet.release_date} <br><br> <b>Score:</b> ${selectMovieTarjet.rt_score} ⭐ 
-      <h3>characters:</h3></div></div>
-      <div class=picture><img src="${selectMovieTarjet.poster}">`;
+              <div class=texts>
+              <div id="title" class=title>${selectMovieTarjet.title}</div>
+              <div id="caracter" class=description><b>Description:</b> ${selectMovieTarjet.description} <br><br><b>Director:</b> ${selectMovieTarjet.director} <br><br> <b>Producer:</b> ${selectMovieTarjet.producer} <br><br> <b>Release date:</b> ${selectMovieTarjet.release_date} <br><br> <b>Score:</b> ${selectMovieTarjet.rt_score} ⭐ 
+              <h3>characters:</h3></div></div>
+              <div class=picture><img src="${selectMovieTarjet.poster}">`;
           //PROMEDIO
           const agePromedio=ageProm(data,selectMovieTarjet.people)
           console.log(selectMovieTarjet.people);
@@ -134,7 +132,7 @@ typeSelect3.addEventListener("change", () => {
   console.log(selectFilms);
   console.log(seleccionarMovie);
   //contenedor con div id slider para contener carrusel
-  contenedor.innerHTML=`<div id="slider"></div>`;
+  contenedor.innerHTML=`${selectFilms}<div id="slider"></div>`;
   seleccionarMovie.people.forEach((personaje)=>{
     document.getElementById("slider").innerHTML += `
       <div class= "character"> <br><div class=imgPeople><img src="${personaje.img}"></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
