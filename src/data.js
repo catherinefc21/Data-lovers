@@ -2,6 +2,7 @@ export const filterProducer = (data, respuestaUsuario) => {
   const filterProducer = data.filter(productor => productor.producer === respuestaUsuario);
   return filterProducer;
 }
+
 export const filterDirector = (data, respuestaUsuario) => {
   const filterDirector = data.filter(director => director.director === respuestaUsuario);
   return filterDirector;
@@ -18,9 +19,7 @@ export const orderAz= (data, respuestaUsuario) => {
         return 1;
       }if (a.title<b.title){
         return -1;
-      }
-      return 0; 
-    
+      } 
     });
     return orderMovies;
     
@@ -31,12 +30,10 @@ export const orderAz= (data, respuestaUsuario) => {
         return 1;
       }if (a.title>b.title){
         return -1;
-      }
-      return 0;
+      } 
     });
     return orderMovies2;
   }};
-    
 
 export const ageProm=(data,respuestaUsuarioPeople)=>{
   //const ageC es un array con age ['13', '13', '60', '33', 'Unspecified/Elderly', 'Unspecified/Adult', 'Unspecified/Adult'] 
@@ -51,3 +48,5 @@ export const ageProm=(data,respuestaUsuarioPeople)=>{
   const ageProm= (ageSuma/ageFiltrado.length).toFixed(2);
   return ageProm;
 }
+    
+
