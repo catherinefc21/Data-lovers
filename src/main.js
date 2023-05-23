@@ -114,15 +114,15 @@ typeSelect3.addEventListener("change", () => {
 );
 
 //BOTON ORDENAR A-Z(clonar movies para usar esa constant y ordenarla)
-movies.itself = movies 
+const newMovies = data.films
 const typeOrder= document.getElementById("typeOrder");
 typeOrder.addEventListener("change", () => {
   const selectOrder= typeOrder.value;
-  const ordenarPeliculas1= orderAz(movies,selectOrder)
+  const ordenarPeliculas= orderAz(newMovies,selectOrder)
   console.log(selectOrder);
-  console.log(ordenarPeliculas1);
+  console.log(ordenarPeliculas);
   contenedor.innerHTML="",
-  ordenarPeliculas1.forEach((order)=>{
+  ordenarPeliculas.forEach((order)=>{
     contenedor.innerHTML +=`<section> <br><img src="${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
   })
 });
