@@ -26,42 +26,71 @@ history.addEventListener("click", function(){
 //BOTON VER TODAS LAS PELÍCULAS(FILMS)
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
-  contenedor.innerHTML=""
+  contenedor.innerHTML="";
+  contenedor.innerHTML+=`<div class="desplegables">
+  <label for="typeOrder"  class="dropdown">
+      <option class="dropbtn">ORDER</option>
+      <div class="dropdown-content">
+        <select name="typeOrder" id="typeOrder" class="option">
+          <option value="Options" class="options">Please select</option>
+          <option value="A-Z" class="option">A-Z</option>
+          <option value="Z-A" class="option">Z-A</option>
+        </select>
+    </div>
+  </label>
+</div>
+<div id="contenedor2"></div>`
   movies.forEach(movie=>{
-    contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+    document.getElementById("contenedor2").innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
   })
 
-  //Descripción extensa de la película al hacer CLICK 
+  movies.itself = movies 
+  const clone=structuredClone(movies);
+  const typeOrder= document.getElementById("typeOrder");
+  typeOrder.addEventListener("change", () => {
+    const selectOrder= typeOrder.value;
+    const ordenarPeliculas1= orderAz(clone,selectOrder)
+    document.getElementById("contenedor2").innerHTML=""
+    console.log(selectOrder);
+    console.log(ordenarPeliculas1);
+    ordenarPeliculas1.forEach((movie)=>{
+      document.getElementById("contenedor2").innerHTML+=`<section moviename1="${movie.title}"> <br><img moviename1="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+    })
+  });
+
+
+
+  //Descripción extensa de la película al hacer CLICK y ORDEN DE A-Z Y Z-A 
   // eslint-disable-next-line no-console
   console.log(contenedor);
-  for( let i=0; i<contenedor.children.length; i++){
-    (contenedor.children[i].addEventListener("click", function(e){
-      console.log(e.target.getAttribute("moviename"));
-      const movieTarjet=e.target.getAttribute("moviename");
-      contenedor.innerHTML="";
-      const selectMovieTarjet= selectMovie(movies, movieTarjet);
-      if (selectMovieTarjet){
-        contenedor.innerHTML=`<div class=principal>
+  document.getElementById("contenedor2").addEventListener("click", function(e) {
+    const movieTarjet = e.target.getAttribute("moviename") || e.target.getAttribute("moviename1");
+    if (movieTarjet) {
+      contenedor.innerHTML = "";
+      const selectMovieTarjet = selectMovie(movies, movieTarjet);
+      if (selectMovieTarjet) {contenedor.innerHTML="";
+ 
+        const selectMovieTarjet= selectMovie(movies, movieTarjet);
+        if (selectMovieTarjet){
+          contenedor.innerHTML=`<div class=principal>
       <div class=texts>
       <div id="title" class=title>${selectMovieTarjet.title}</div>
       <div id="caracter" class=description><b>Description:</b> ${selectMovieTarjet.description} <br><br><b>Director:</b> ${selectMovieTarjet.director} <br><br> <b>Producer:</b> ${selectMovieTarjet.producer} <br><br> <b>Release date:</b> ${selectMovieTarjet.release_date} <br><br> <b>Score:</b> ${selectMovieTarjet.rt_score} ⭐ 
       <h3>characters:</h3></div></div>
       <div class=picture><img src="${selectMovieTarjet.poster}">`;
-        //PROMEDIO
-        const agePromedio=ageProm(data,selectMovieTarjet.people)
-        console.log(selectMovieTarjet.people);
-        console.log(agePromedio);
-        //MOSTRAR EN PANTALLA 
-        document.getElementById("caracter").innerHTML +=`<div class="promedio">Promedio edad: ${agePromedio}</div>`
+          //PROMEDIO
+          const agePromedio=ageProm(data,selectMovieTarjet.people)
+          console.log(selectMovieTarjet.people);
+          console.log(agePromedio);
+          //MOSTRAR EN PANTALLA 
+          document.getElementById("caracter").innerHTML +=`<div class="promedio">Promedio edad: ${agePromedio}</div>`
         
-        selectMovieTarjet.people.forEach((personaje)=>{
-          document.getElementById("caracter").innerHTML += `<div id="slider" class"slider"></div>`
-          document.getElementById("slider").innerHTML +=`<div id="carrusel" class= "characterName"> <br><div class=nameImg><img src="${personaje.img} "></div> <br><div class=name><h3>${personaje.name}</h3></div> </div>`
-        })
-      }
-    }));
-  }
-
+          selectMovieTarjet.people.forEach((personaje)=>{
+            document.getElementById("caracter").innerHTML += `<div id="slider" class"slider"></div>`
+            document.getElementById("slider").innerHTML +=`<div id="carrusel" class= "characterName"> <br><div class=nameImg><img src="${personaje.img} "></div> <br><div class=name><h3>${personaje.name}</h3></div> </div>`
+          })}}
+    }
+  })
 })
 
 //BOTON EN MENÚ PARA SELECCIONAR PRODUCTOR
