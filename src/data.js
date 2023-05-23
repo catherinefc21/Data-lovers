@@ -25,17 +25,17 @@ export const orderAz= (data, respuestaUsuario) => {
     return orderMovies;
     
   }
-    else if(respuestaUsuario==="Z-A"){
-      const orderMovies2= data.sort((a, b)=> {
-        if (a.title<b.title){
-          return 1;
-        }if (a.title>b.title){
-          return -1;
-        }
-        return 0; 
-      });
-      return orderMovies2;
-    }};
+  else if(respuestaUsuario==="Z-A"){
+    const orderMovies2= data.sort((a, b)=> {
+      if (a.title<b.title){
+        return 1;
+      }if (a.title>b.title){
+        return -1;
+      }
+      return 0;
+    });
+    return orderMovies2;
+  }};
     
 
 export const ageProm=(data,respuestaUsuarioPeople)=>{

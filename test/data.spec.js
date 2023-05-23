@@ -1,19 +1,15 @@
 import { filterProducer} from '../src/data.js';
 import data from './data/ghibli/ghibli.js';
 
-
-
 describe('filterProducer', () => {
   it('is a function', () => {
     expect(typeof filterProducer).toBe('function');
   });
-
   it('returns `filterProducer filtra correctamente los productores`', () => {
-    expect(filterProducer(data,selectProductor)).toBe(filterProducer);
+    expect(filterProducer(data,"Isao Takahata")).toBe(resultProducer);
   });
 });
-
-
+const resultProducer=[]
 /*describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');

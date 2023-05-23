@@ -63,6 +63,7 @@ todas.addEventListener("click", function(){
 const typeSelect= document.getElementById("typeProductors");
 typeSelect.addEventListener("change", () => {
   const selectProductor= typeSelect.value;
+  console.log(selectProductor)
  
   const filtroProductor= filterProducer(movies,selectProductor);
   console.log(filtroProductor)
@@ -109,10 +110,10 @@ const typeOrder= document.getElementById("typeOrder");
 typeOrder.addEventListener("change", () => {
   const selectOrder= typeOrder.value;
   const ordenarPeliculas1= orderAz(movies,selectOrder)
-contenedor.innerHTML="",
-ordenarPeliculas1.forEach((order)=>{
-  contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
-})
+  contenedor.innerHTML="",
+  ordenarPeliculas1.forEach((order)=>{
+    contenedor.innerHTML +=`<section> <br><img src="  ${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
+  })
 });
 
 
