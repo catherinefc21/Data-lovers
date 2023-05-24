@@ -26,105 +26,111 @@ history.addEventListener("click", function(){
 //BOTON VER TODAS LAS PELÍCULAS(FILMS)
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
-  contenedor.innerHTML=""
+  contenedor.innerHTML="";
+  contenedor.innerHTML+=`<div class="desplegable_Order">
+          <b>ORDER:</b>
+        <select name="typeOrder" id="typeOrder" class="optionOrder">
+          <option value="Options" class="options">Please select</option>
+          <option value="A-Z" class="option">A-Z</option>
+          <option value="Z-A" class="option">Z-A</option>
+        </select>
+        </div>
+<div id="contenedor2"></div>`
   movies.forEach(movie=>{
-    contenedor.innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+    document.getElementById("contenedor2").innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
   })
+  //ORDENAR DE LA A-Z Y Z-A
+  movies.itself = movies 
+  const clone=structuredClone(movies);
+  const typeOrder= document.getElementById("typeOrder");
+  typeOrder.addEventListener("change", () => {
+    const selectOrder= typeOrder.value;
+    const ordenarPeliculas1= orderAz(clone,selectOrder)
+    document.getElementById("contenedor2").innerHTML=""
+    console.log(selectOrder);
+    console.log(ordenarPeliculas1);
+    ordenarPeliculas1.forEach((movie)=>{
+      document.getElementById("contenedor2").innerHTML+=`<section moviename1="${movie.title}"> <br><img moviename1="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
+    })
+  });
 
-  //Descripción extensa de la película al hacer CLICK 
+  //Descripción extensa de la película al hacer CLICK
   // eslint-disable-next-line no-console
   console.log(contenedor);
-  for( let i=0; i<contenedor.children.length; i++){
-    (contenedor.children[i].addEventListener("click", function(e){
-      console.log(e.target.getAttribute("moviename"));
-      const movieTarjet=e.target.getAttribute("moviename");
-      contenedor.innerHTML="";
-      const selectMovieTarjet= selectMovie(movies, movieTarjet);
-      if (selectMovieTarjet){
-        contenedor.innerHTML=`<div class=principal>
-      <div class=texts>
-      <div id="title" class=title>${selectMovieTarjet.title}</div>
-      <div id="caracter" class=description><b>Description:</b> ${selectMovieTarjet.description} <br><br><b>Director:</b> ${selectMovieTarjet.director} <br><br> <b>Producer:</b> ${selectMovieTarjet.producer} <br><br> <b>Release date:</b> ${selectMovieTarjet.release_date} <br><br> <b>Score:</b> ${selectMovieTarjet.rt_score} ⭐ 
-      <h3>characters:</h3></div></div>
-      <div class=picture><img src="${selectMovieTarjet.poster}">`;
-        //PROMEDIO
-        const agePromedio=ageProm(data,selectMovieTarjet.people)
-        console.log(selectMovieTarjet.people);
-        console.log(agePromedio);
-        //MOSTRAR EN PANTALLA 
-        document.getElementById("caracter").innerHTML +=`<div class="promedio">Promedio edad: ${agePromedio}</div>`
-        
-        selectMovieTarjet.people.forEach((personaje)=>{
-          document.getElementById("caracter").innerHTML += `<div id="slider" class"slider"></div>`
-          document.getElementById("slider").innerHTML +=`<div id="carrusel" class= "characterName"> <br><div class=nameImg><img src="${personaje.img} "></div> <br><div class=name><h3>${personaje.name}</h3></div> </div>`
-        })
-      }
-    }));
-  }
-
-})
-
-//BOTON EN MENÚ PARA SELECCIONAR PRODUCTOR
-const typeSelect= document.getElementById("typeProductors");
-typeSelect.addEventListener("change", () => {
-  const selectProductor= typeSelect.value;
-  console.log(selectProductor)
+  document.getElementById("contenedor2").addEventListener("click", function(e) {
+    const movieTarjet = e.target.getAttribute("moviename") || e.target.getAttribute("moviename1");
+    if (movieTarjet) {
+      contenedor.innerHTML = "";
+      const selectMovieTarjet = selectMovie(movies, movieTarjet);
+      if (selectMovieTarjet) {contenedor.innerHTML="";
  
-  const filtroProductor= filterProducer(movies,selectProductor);
-  console.log(selectProductor);
-  console.log(filtroProductor);
-  contenedor.innerHTML="",
-  filtroProductor.forEach((peli)=>{
-    contenedor.innerHTML += `<section> <br><img src="${peli.poster}">  <br>${peli.rt_score} ⭐ <br>  ${peli.title} </section>`
+        const selectMovieTarjet= selectMovie(movies, movieTarjet);
+        if (selectMovieTarjet){
+          contenedor.innerHTML=`<div class=principal>
+        <div class=texts>
+        <div id="title" class=title>${selectMovieTarjet.title}</div>
+        <div id="caracter" class=description><b>Description:</b> ${selectMovieTarjet.description} <br><br><b>Director:</b> ${selectMovieTarjet.director} <br><br> <b>Producer:</b> ${selectMovieTarjet.producer} <br><br> <b>Release date:</b> ${selectMovieTarjet.release_date} <br><br> <b>Score:</b> ${selectMovieTarjet.rt_score} ⭐ <br><br></div></div>
+        <div class=picture><img src="${selectMovieTarjet.poster}"></div>
+        </div><div class="tittlePeople">Characters <div id ="characters"></div></div>`;
+  
+          //PROMEDIO
+          const agePromedio=ageProm(data,selectMovieTarjet.people)
+          console.log(selectMovieTarjet.people);
+          console.log(agePromedio);
+          //MOSTRAR EN PANTALLA 
+          document.getElementById("caracter").innerHTML += `<div class="promedio"><b>Promedio edad:</b> ${agePromedio} años.</div>`
+          
+          selectMovieTarjet.people.forEach((personaje)=>{
+            document.getElementById("characters").innerHTML += `<div class= "characterName"> <br><div class=nameImg><img src="${personaje.img} "></div> <br><div class=name><b>${personaje.name}</b></div> </div>`
+          })
+        }
+      }}});
+
+  //BOTON EN MENÚ PARA SELECCIONAR PRODUCTOR
+  const typeSelect= document.getElementById("typeProductors");
+  typeSelect.addEventListener("change", () => {
+    const selectProductor= typeSelect.value;
+    console.log(selectProductor)
+ 
+    const filtroProductor= filterProducer(movies,selectProductor);
+    console.log(selectProductor);
+    console.log(filtroProductor);
+    contenedor.innerHTML="",
+    filtroProductor.forEach((peli)=>{
+      contenedor.innerHTML += `<section> <br><img src="${peli.poster}">  <br>${peli.rt_score} ⭐ <br>  ${peli.title} </section>`
+    })
+  });
+
+  //BOTON EN MENÚ PARA SELECCIONAR DIRECTOR
+  const typeSelect2= document.getElementById("typeDirectors");
+  typeSelect2.addEventListener("change", () => {
+    const selectDirector= typeSelect2.value;
+    //FUNCION filtra el director seleccionado
+    const filtroDirector= filterDirector(movies, selectDirector);
+    console.log(selectDirector);
+    console.log(filtroDirector);
+    contenedor.innerHTML="";
+    filtroDirector.forEach((peli2)=>{
+      contenedor.innerHTML += `<section> <br><img src="  ${peli2.poster} ">  <br>${peli2.rt_score} ⭐ <br>  ${peli2.title} </section>`  });
+  });
+
+  //LISTA DESPLEGABLE CON NOMBRES DE PELÍCULA PARA VER PERSONAJES(VIEW PEOPLE)
+  const contenedor_listMovies=document.getElementById("listMovies");
+  contenedor_listMovies.innerHTML=`<option value="Options" class="options">Please select</option>`
+  movies.forEach(list=>{
+    contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="optionC">${list.title}</option>`
   })
-});
-
-//BOTON EN MENÚ PARA SELECCIONAR DIRECTOR
-const typeSelect2= document.getElementById("typeDirectors");
-typeSelect2.addEventListener("change", () => {
-  const selectDirector= typeSelect2.value;
-  //FUNCION filtra el director seleccionado
-  const filtroDirector= filterDirector(movies, selectDirector);
-  console.log(selectDirector);
-  console.log(filtroDirector);
-  contenedor.innerHTML="";
-  filtroDirector.forEach((peli2)=>{
-    contenedor.innerHTML += `<section> <br><img src="  ${peli2.poster} ">  <br>${peli2.rt_score} ⭐ <br>  ${peli2.title} </section>`  });
-});
-
-//LISTA DESPLEGABLE CON NOMBRES DE PELÍCULA PARA VER PERSONAJES(VIEW PEOPLE)
-const contenedor_listMovies=document.getElementById("listMovies");
-contenedor_listMovies.innerHTML=`<option value="Options" class="options">Please select</option>`
-movies.forEach(list=>{
-  contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="option">${list.title}</option>`
-})
-//Seleccionar pelicula para ver personajes
-const typeSelect3= document.getElementById("listMovies");
-typeSelect3.addEventListener("change", () => {
-  const selectFilms= typeSelect3.value;
-  const seleccionarMovie= selectMovie(movies, selectFilms);
-  console.log(selectFilms);
-  console.log(seleccionarMovie);
-  //contenedor con div id slider para contener carrusel
-  contenedor.innerHTML=`<div id="slider"></div>`;
-  seleccionarMovie.people.forEach((personaje)=>{
-    document.getElementById("slider").innerHTML += `
+  //Seleccionar pelicula para ver personajes
+  const typeSelect3= document.getElementById("listMovies");
+  typeSelect3.addEventListener("change", () => {
+    const selectFilms= typeSelect3.value;
+    const seleccionarMovie= selectMovie(movies, selectFilms);
+    console.log(selectFilms);
+    console.log(seleccionarMovie);
+    //contenedor con div id slider para contener carrusel
+    contenedor.innerHTML=`<div id="title" class=title1>${selectFilms}</div><div id="slider"></div>`;
+    seleccionarMovie.people.forEach((personaje)=>{
+      document.getElementById("slider").innerHTML += `
       <div class= "character"> <br><div class=imgPeople><img src="${personaje.img}"></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
-  })}
-);
-
-//BOTON ORDENAR A-Z(clonar movies para usar esa constant y ordenarla)
-const newMovies = data.films
-const typeOrder= document.getElementById("typeOrder");
-typeOrder.addEventListener("change", () => {
-  const selectOrder= typeOrder.value;
-  const ordenarPeliculas= orderAz(newMovies,selectOrder)
-  console.log(selectOrder);
-  console.log(ordenarPeliculas);
-  contenedor.innerHTML="",
-  ordenarPeliculas.forEach((order)=>{
-    contenedor.innerHTML +=`<section> <br><img src="${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
-  })
-});
-
-
+    })}
+  )})
