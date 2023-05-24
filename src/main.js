@@ -81,7 +81,7 @@ todas.addEventListener("click", function(){
           document.getElementById("caracter").innerHTML += `<div class="promedio"><b>Promedio edad:</b> ${agePromedio} años.</div>`
           
           selectMovieTarjet.people.forEach((personaje)=>{
-            document.getElementById("characters").innerHTML += `<div class= "characterName"> <br><div class=nameImg><img src="${personaje.img} "></div> <br><div class=name><b>${personaje.name}</b></div> </div>`
+            document.getElementById("characters").innerHTML += `<div class= "characterName"><br><div class=nameImg><img src="${personaje.img} "></div><br><div class=name><b>${personaje.name}</b></div></div>`
           })
         }
       }}});

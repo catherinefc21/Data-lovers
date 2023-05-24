@@ -98,7 +98,7 @@ nav{
 .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color:  #d9d9d99f;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
@@ -269,7 +269,7 @@ p{
 
 }
 .title{
-    background-color: #D9D9D9;
+    background-color:  #d9d9d99f;
     margin-bottom: 3%;
     padding: 15px 10px;
     text-align: left;
@@ -281,7 +281,7 @@ p{
     margin-left: -2%;
 }
 .description{
-    background-color: #D9D9D9;
+    background-color: #d9d9d99f;
     padding: 10px;
     text-align: justify;
     width: 100%;
@@ -293,7 +293,7 @@ p{
     margin-top: 5%;
 }
 .picture{
-    background-color: #D9D9D9;
+    background-color:  #d9d9d99f;
     display: inline-block;
     margin-top: 3%;
     text-align: center;
@@ -312,12 +312,12 @@ p{
 }
 
 .tittlePeople{
-    background-color: #D9D9D9;
+    background-color:  #d9d9d99f;
     margin-bottom: 3%;
     padding: 15px 20px;
     text-align: center;
     width: 75%;
-    height: 10%;
+    height: 15%;
     font-size: 25px;
     font-weight: 600;
     margin-left: 11%;
@@ -327,15 +327,15 @@ p{
 .characterName{
     display: inline-block;
     flex-wrap: wrap;
-    background-color: #d9d9d9;
-    padding: 0px 8px;
+    background-color:  #d9d9d99f;
+    padding: 0px 10px;
     border-radius: 4%; 
     margin-left: -3px;
+    height: 155px;
 }
 
 .nameImg img:hover{
     transform: scale(1.4) translateZ(0);
-
 }
 
 .name{
@@ -365,7 +365,7 @@ p{
     margin: 0px 30px;
 }
 .title1{
-background-color: #D9D9D9;
+background-color:  #d9d9d99f;
 margin-left: 24%;
 margin-top: 5%;
 padding: 5px 10px;
@@ -410,7 +410,7 @@ justify-content: center;}
     border-radius: 60px 30px 60px 30px;
     box-shadow: 0 1px 1px rgba(0,0,0,1); /*sombreado leve 
     en la parte baja del borde 3d*/
-    background-color: #d9d9d98c;
+    background-color:  #d9d9d99f;
     z-index: 1;
     padding-top: 8%;
 }
