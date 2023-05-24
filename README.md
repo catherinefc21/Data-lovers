@@ -21,7 +21,7 @@ La aplicación web incia con un mensaje de bienvenida que invita a interactuar c
 
 ## 2. Historias de usuario
 
-###1.-Historia de Usuario: 
+#### 1.-Historia de Usuario: 
 * "Como fans de Studios Ghibli" quiero ver todas las películas estudios Ghibli con su puntuación e imagen"
 #### Criterios de Aceptación:
 * Que sea responsive Que se vea la imagen de la película, el nombre y la puntuación.
@@ -30,61 +30,61 @@ La aplicación web incia con un mensaje de bienvenida que invita a interactuar c
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages.
 
-2.- Historia de Usuario: 
+#### 2.- Historia de Usuario: 
 * "Como fans quiero poder filtrar mis peliculas de acuerdo a los productores encargados en Studio Ghibli"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive
 * Que haya una lista desplegable con opciones de productor
 * Que se filtren y muestren las péliculas según el productor seleccionado
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages
 
-3.- Historia de Usuario:
+#### 3.- Historia de Usuario:
 * "Como fans quiero poder filtrar mis peliculas de acuerdo a los directores encargados en Studio Ghibli"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive
 * Que haya una lista desplegable con opciones de directores.
 * Que se filtren y muestren las péliculas según el director seleccionado.
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages
 
-4.-Historia de Usuario:
+#### 4.-Historia de Usuario:
 * "Como fans quiero leer una historia breve de los Estudios Ghibli"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive
 * Que se muestre una imagen y un texto resumen sobre Estudios Ghibli.
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages
 
-5.-Historia de Usuario:
+#### 5.-Historia de Usuario:
 * "Como fans quiero ver las un resumen de las características de mi película favorita"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive
 * Que al elegir una película se muestre su nombre, descripción general, director, productor, año lanzamiento, puntaje, personajes.
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages
 
-6.- Historia de Usuario:
+#### 6.- Historia de Usuario:
 * "Como fans quiero filtrar los personajes de mi película favorita"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive
 * Que se muestre un lista deplegable con las opciones de película.
 * Que al hacer click en la película seleccionada se muestren los personajes y sus características principales.
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages
 
-7.- Historia de Usuario:
+#### 7.- Historia de Usuario:
 * "Como fans quiero ordenar las películas de los Estudios Ghibli de orden ascendente y descendente"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive.
 * Que muestre un botón con dos opciones de ordenado de la A-Z y Z-A.
 * Que al hacer click se ordenen según la opcion selecionada.
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages
 
