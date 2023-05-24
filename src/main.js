@@ -27,18 +27,14 @@ history.addEventListener("click", function(){
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
   contenedor.innerHTML="";
-  contenedor.innerHTML+=`<div class="desplegables">
-  <label for="typeOrder"  class="dropdown">
-      <option class="dropbtn">ORDER</option>
-      <div class="dropdown-content">
-        <select name="typeOrder" id="typeOrder" class="option">
+  contenedor.innerHTML+=`<div class="desplegable_Order">
+          <b>ORDER:</b>
+        <select name="typeOrder" id="typeOrder" class="optionOrder">
           <option value="Options" class="options">Please select</option>
           <option value="A-Z" class="option">A-Z</option>
           <option value="Z-A" class="option">Z-A</option>
         </select>
-    </div>
-  </label>
-</div>
+        </div>
 <div id="contenedor2"></div>`
   movies.forEach(movie=>{
     document.getElementById("contenedor2").innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
@@ -81,7 +77,7 @@ todas.addEventListener("click", function(){
           console.log(selectMovieTarjet.people);
           console.log(agePromedio);
           //MOSTRAR EN PANTALLA 
-          document.getElementById("caracter").innerHTML +=`<div class="promedio">Promedio edad: ${agePromedio}</div>`
+          document.getElementById("caracter").innerHTML +=`<div class="promedio">Promedio edad: ${agePromedio} años.</div>`
         
           selectMovieTarjet.people.forEach((personaje)=>{
             document.getElementById("caracter").innerHTML += `<div id="slider" class"slider"></div>`
@@ -123,7 +119,7 @@ typeSelect2.addEventListener("change", () => {
 const contenedor_listMovies=document.getElementById("listMovies");
 contenedor_listMovies.innerHTML=`<option value="Options" class="options">Please select</option>`
 movies.forEach(list=>{
-  contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="option">${list.title}</option>`
+  contenedor_listMovies.innerHTML+= `<option value="${list.title}" class="optionC">${list.title}</option>`
 })
 //Seleccionar pelicula para ver personajes
 const typeSelect3= document.getElementById("listMovies");
@@ -133,25 +129,10 @@ typeSelect3.addEventListener("change", () => {
   console.log(selectFilms);
   console.log(seleccionarMovie);
   //contenedor con div id slider para contener carrusel
-  contenedor.innerHTML=`${selectFilms}<div id="slider"></div>`;
+  contenedor.innerHTML=`<div id="title" class=title1>${selectFilms}</div><div id="slider"></div>`;
   seleccionarMovie.people.forEach((personaje)=>{
     document.getElementById("slider").innerHTML += `
       <div class= "character"> <br><div class=imgPeople><img src="${personaje.img}"></div> <br><div class= information><h3>${personaje.name}</h3> <b>Age:</b> ${personaje.age} <br> <b>Gender:</b> ${personaje.gender} <br> <b>Specie:</b> ${personaje.specie} <br> <b>Eye color:</b> ${personaje.eye_color}<br> <b>Hair color:</b>${personaje.hair_color}</div> </div>`
   })}
 );
-
-//BOTON ORDENAR A-Z(clonar movies para usar esa constant y ordenarla)
-const newMovies = data.films
-const typeOrder= document.getElementById("typeOrder");
-typeOrder.addEventListener("change", () => {
-  const selectOrder= typeOrder.value;
-  const ordenarPeliculas= orderAz(newMovies,selectOrder)
-  console.log(selectOrder);
-  console.log(ordenarPeliculas);
-  contenedor.innerHTML="",
-  ordenarPeliculas.forEach((order)=>{
-    contenedor.innerHTML +=`<section> <br><img src="${order.poster} ">  <br>${order.rt_score} ⭐ <br>  ${order.title} </section>`
-  })
-});
-
 
