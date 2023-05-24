@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export const filterProducer = (data, respuestaUsuario) => {
   const filterProducer = data.filter(productor => productor.producer === respuestaUsuario);
   return filterProducer;
@@ -29,6 +30,8 @@ export const orderAz= (data, respuestaUsuario) => {
 
 export const ageProm=(data, respuestaUsuarioPeople)=>{
   //const ageC es un array con age ['13', '13', '60', '33', 'Unspecified/Elderly', 'Unspecified/Adult', 'Unspecified/Adult'] 
+  const data1=data;
+  console.log(data1);
   const ageC= respuestaUsuarioPeople.map((Edad)=>Edad.age);
   //ageNumber pasa los spring a Number [13, 13, 60, 33, NaN, NaN, NaN, 30, NaN, NaN, NaN, 50, 33]
   const ageNumber=  ageC.map(Element=> parseInt(Element))
