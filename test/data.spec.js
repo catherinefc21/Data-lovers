@@ -5453,7 +5453,7 @@ describe('ageProm', () => {
     expect(typeof ageProm).toBe('function');
   });
 
-  it('returns `ageProm ordena correctamente`', () => {
+  it('returns `ageProm realiza cálculo correctamente`', () => {
     expect (ageProm(films,[
       {
         "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
