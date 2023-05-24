@@ -21,12 +21,12 @@ La aplicación web incia con un mensaje de bienvenida que invita a interactuar c
 
 ## 2. Historias de usuario
 
-1.-Historia de Usuario: 
+###1.-Historia de Usuario: 
 * "Como fans de Studios Ghibli" quiero ver todas las películas estudios Ghibli con su puntuación e imagen"
-Criterios de Aceptación:
+#### Criterios de Aceptación:
 * Que sea responsive Que se vea la imagen de la película, el nombre y la puntuación.
 * Que no haya interacción, sólo se muestre en pantalla.
-Definición de terminado
+#### Definición de terminado
 * Todo el código está subido a la rama principal del repositorio.
 * Publicado en Github pages.
 
