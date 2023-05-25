@@ -1,7 +1,6 @@
 import { filterProducer,filterDirector,selectMovie,orderAz,ageProm} from '../src/data.js';
 import data from '../src/data/ghibli/ghibli.js';
 
-const films= data.films;
 
 //FILTRAR PRODUCTOR FUNCION/EJERCICIO
 describe('filterProducer', () => {
@@ -9,7 +8,7 @@ describe('filterProducer', () => {
     expect(typeof filterProducer).toBe('function');
   });
   it('returns `filterProducer filtra correctamente los productores`', () => {
-    expect (filterProducer(films,"Isao Takahata")).toStrictEqual([
+    expect (filterProducer(data.films,"Isao Takahata")).toEqual([
       {
         "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
         "title": "Castle in the Sky",
@@ -222,7 +221,7 @@ describe('filterDirector', () => {
   });
 
   it('returns `filterDirector  filtra correctamente los directores`', () => {
-    expect (filterDirector (films,"Hiroyuki Morita")).toStrictEqual([
+    expect (filterDirector (data.films,"Hiroyuki Morita")).toEqual([
       {
         "id": "90b72513-afd4-4570-84de-a56c312fdf81",
         "title": "The Cat Returns",
@@ -365,7 +364,7 @@ describe('selectMovie', () => {
   });
 
   it('returns `selectMovie filtra correctamente segun la pelicula seleccionada`', () => {
-    expect (selectMovie(films,"Castle in the Sky")).toStrictEqual({
+    expect (selectMovie(data.films,"Castle in the Sky")).toEqual({
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
       "title": "Castle in the Sky",
       "description": "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
@@ -577,7 +576,7 @@ describe('orderAz', () => {
   });
 
   it('returns `orderAz ordena correctamente`', () => {
-    expect (orderAz(films,"A-Z")).toStrictEqual([
+    expect (orderAz(data.films,"A-Z")).toEqual([
       {
         "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
         "title": "Castle in the Sky",
@@ -3011,7 +3010,7 @@ describe('orderAz', () => {
     ])
   })
   it('returns `orderAz ordena correctamente`', () => {
-    expect (orderAz(films,"Z-A")).toStrictEqual([
+    expect (orderAz(data.films,"Z-A")).toEqual([
       {
         "id": "ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
         "title": "Whisper of the Heart",
@@ -5454,7 +5453,7 @@ describe('ageProm', () => {
   });
 
   it('returns `ageProm realiza cálculo correctamente`', () => {
-    expect (ageProm(films,[
+    expect (ageProm(data.films,[
       {
         "id": "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
         "name": "Pazu",
