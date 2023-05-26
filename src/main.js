@@ -8,7 +8,7 @@ import data from './data/ghibli/ghibli.js';
 const movies= data.films;
 console.log(movies)
 
-//PÁGINA INICIO (Bienvenida)
+//---------------------PÁGINA INICIO (Bienvenida)------------------------------------------------------------
 const contenedor= document.getElementById("contenedor");
 contenedor.innerHTML+= `<div class="inicio"> 
 <div class="welcome">
@@ -17,7 +17,7 @@ contenedor.innerHTML+= `<div class="inicio">
 </div>
 </div>`
 
-//BOTON HISTORIA
+//----------------------BOTON HISTORIA-----------------------------------------------------------------------
 const history= document.getElementById("history");
 history.addEventListener("click", function(){
   contenedor.innerHTML=""
@@ -28,23 +28,24 @@ history.addEventListener("click", function(){
   </div>`
 })
 
-//BOTON VER TODAS LAS PELÍCULAS(FILMS)
+//---------------------BOTON VER TODAS LAS PELÍCULAS(FILMS)---------------------------------------------------
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
   contenedor.innerHTML="";
-  contenedor.innerHTML+=`<div class="desplegable_Order">
-          <b>ORDER:</b>
+  contenedor.innerHTML+=`<div class="desplegable_Order"><b>ORDER:</b>
         <select name="typeOrder" id="typeOrder" class="optionOrder">
           <option value="Options" class="options">Please select</option>
           <option value="A-Z" class="option">A-Z</option>
           <option value="Z-A" class="option">Z-A</option>
         </select>
         </div>
-<div id="contenedor2"></div>`
+        <div id="contenedor2"></div>`
   movies.forEach(movie=>{
     document.getElementById("contenedor2").innerHTML+= `<section moviename="${movie.title}"> <br><img moviename="${movie.title}" src="${movie.poster}">  <br>${movie.rt_score} ⭐ <br>  ${movie.title} </section>`
   })
-  //ORDENAR DE LA A-Z Y Z-A
+
+
+  //--------------------ORDENAR DE LA A-Z Y Z-A--------------------------------------------------------------
   movies.itself = movies 
   const clone=structuredClone(movies);
   const typeOrder= document.getElementById("typeOrder");
@@ -59,7 +60,7 @@ todas.addEventListener("click", function(){
     })
   });
 
-  //Descripción extensa de la película al hacer CLICK
+  //Descripción extensa de la película al hacer CLICK-----------------------------------------------------------
   // eslint-disable-next-line no-console
   console.log(contenedor);
   document.getElementById("contenedor2").addEventListener("click", function(e) {
@@ -88,7 +89,7 @@ todas.addEventListener("click", function(){
       }
     }});})
 
-//BOTON EN MENÚ PARA SELECCIONAR PRODUCTOR
+//------------------------BOTON EN MENÚ PARA SELECCIONAR PRODUCTOR-----------------------------------------------
 const typeSelect= document.getElementById("typeProductors");
 typeSelect.addEventListener("change", () => {
   const selectProductor= typeSelect.value;
@@ -103,7 +104,7 @@ typeSelect.addEventListener("change", () => {
   })
 });
 
-//BOTON EN MENÚ PARA SELECCIONAR DIRECTOR
+//----------------------BOTON EN MENÚ PARA SELECCIONAR DIRECTOR----------------------------------------------------
 const typeSelect2= document.getElementById("typeDirectors");
 typeSelect2.addEventListener("change", () => {
   const selectDirector= typeSelect2.value;
@@ -116,7 +117,7 @@ typeSelect2.addEventListener("change", () => {
     contenedor.innerHTML += `<section> <br><img src="  ${peli2.poster} ">  <br>${peli2.rt_score} ⭐ <br>  ${peli2.title} </section>`  });
 });
 
-//LISTA DESPLEGABLE CON NOMBRES DE PELÍCULA PARA VER PERSONAJES(VIEW PEOPLE)
+//LISTA DESPLEGABLE CON NOMBRES DE PELÍCULA PARA VER PERSONAJES(VIEW PEOPLE)----------------------------------------
 const contenedor_listMovies=document.getElementById("listMovies");
 contenedor_listMovies.innerHTML=`<option value="Options" class="options">Please select</option>`
 movies.forEach(list=>{
