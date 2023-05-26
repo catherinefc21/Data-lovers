@@ -28,9 +28,6 @@ history.addEventListener("click", function(){
   </div>`
 })
 
-
-
-
 //BOTON VER TODAS LAS PELÍCULAS(FILMS)
 const todas= document.getElementById("reiniciar");
 todas.addEventListener("click", function(){
@@ -78,16 +75,16 @@ todas.addEventListener("click", function(){
         <div class=picture><img src="${selectMovieTarjet.poster}"></div>
         </div><div class="tittlePeople">Characters <div id ="characters"></div></div>`;
   
-        //PROMEDIO
+        selectMovieTarjet.people.forEach((personaje)=>{
+          document.getElementById("characters").innerHTML += `<div class= "characterName"><br><div class=nameImg><img src="${personaje.img} "></div><br><div class=name><b>${personaje.name}</b></div></div>`
+        })
+
+        //PROMEDIO (Lo puse abajo de personajes para que no bloquee los que no tiene edad, pero igual queda dentro de caracter)
         const agePromedio=ageProm(data,selectMovieTarjet.people)
         console.log(selectMovieTarjet.people);
         console.log(agePromedio);
         //MOSTRAR EN PANTALLA 
         document.getElementById("caracter").innerHTML += `<div class="promedio"><b>Promedio edad:</b> ${agePromedio} años.</div>`
-          
-        selectMovieTarjet.people.forEach((personaje)=>{
-          document.getElementById("characters").innerHTML += `<div class= "characterName"><br><div class=nameImg><img src="${personaje.img} "></div><br><div class=name><b>${personaje.name}</b></div></div>`
-        })
       }
     }});})
 
