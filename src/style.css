@@ -25,6 +25,8 @@ nav{
     margin-bottom: 40px;
 }
 /*LISTAS DESPLEGABLES*/
+
+/*Color de los botones de Menu*/
 .dropbtn {
         background-color: #000102;
         color: white;
@@ -37,6 +39,10 @@ nav{
         justify-content: center;
       }
 
+.dropbtn:hover  {
+        background-color:  #666666;
+}
+/*Menu Character*/
 .dropbtnC {
         background-color: #000102;
         color: white;
@@ -48,10 +54,11 @@ nav{
         display: flex;
         justify-content: center;
       }
+      
 .dropbtnC:hover  {
         background-color:  #666666;
 }   
-
+/*Esconde la lista desplegable*/
 .dropdown-contentC {
     display: none;
     position: absolute;
@@ -60,7 +67,7 @@ nav{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
+/*Opciones*/
 .optionC{
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -71,29 +78,23 @@ nav{
     width: 260px;
 }
       
-.dropbtn:hover  {
-        background-color:  #666666;
-}
+
 
 .options{
     color:#6d6f70
 }
+
 .desplegables{
     display: flex;
 }
 
+/*desplegable del orden peliculas*/
 .desplegable_Order{
  margin-top: 40px;
  display: inline;
  justify-content: center;
 }
-
-
-
-
-.option:hover {background-color: #f1f1f1}
-.button:hover {background-color: #f1f1f1}
-      
+    
 /*ESTO HACE QUE ESTE ESCONDIDO BAJO EL TITULO*/
 .dropdown-content {
         display: none;
@@ -104,15 +105,6 @@ nav{
         z-index: 1;
 }
 
-/* BORRAR? ESTOO NO HACE NADA?
-.dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      
-.dropdown-content a:hover {background-color: #f1f1f1}  */ 
 /*si no funciona cambiar en los tres a block*/
 .dropdown:hover .dropdown-content {
         display: flex;
@@ -153,7 +145,7 @@ nav{
 }
 
 /*CONTENEDOR PRINCIPAL*/
-.article{
+article{
     padding-left: 0px;
     text-align: center;
     justify-content: space-between;   
