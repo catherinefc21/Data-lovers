@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400&display=swap');
+*{font-family: 'Aleo', serif;}
+
+body{
+    background-image: url(./img/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;/*imagen responsive(fondo reescalable)*/
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+header img{
+    width: 25%;
+}
+
+nav{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+/*LISTAS DESPLEGABLES*/
+
+/*Color de los botones de Menu*/
+.dropbtn {
+        background-color: #000102;
+        color: white;
+        padding: 10px 0px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 160px;
+        display: flex;
+        justify-content: center;
+      }
+
+.dropbtn:hover  {
+        background-color:  #666666;
+}
+/*Menu Character*/
+.dropbtnC {
+        background-color: #000102;
+        color: white;
+        padding: 10px 0px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 260px;
+        display: flex;
+        justify-content: center;
+      }
+      
+.dropbtnC:hover  {
+        background-color:  #666666;
+}   
+/*Esconde la lista desplegable*/
+.dropdown-contentC {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/*Opciones*/
+.optionC{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 260px;
+}
+      
+
+
+.options{
+    color:#6d6f70
+}
+
+.desplegables{
+    display: flex;
+}
+
+/*desplegable del orden peliculas*/
+.desplegable_Order{
+ margin-top: 40px;
+ display: inline;
+ justify-content: center;
+}
+    
+/*ESTO HACE QUE ESTE ESCONDIDO BAJO EL TITULO*/
+.dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:  #d9d9d99f;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+}
+
+/*si no funciona cambiar en los tres a block*/
+.dropdown:hover .dropdown-content {
+        display: flex;
+}
+.dropdown:hover .dropdown-contentO {
+    display: flex;
+}
+.dropdown:hover .dropdown-contentC {
+    display: flex;
+}
+      
+.dropdown:hover .dropbtn {
+        background-color:  #666666;
+}
+
+/*OPCIONES LISTAS DESPLEGABLES*/
+.option{
+    background-color: #ffffff;
+    color: rgb(5, 1, 1);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    justify-content: flex-start;
+    width: 160px;
+}
+
+.optionOrder{
+    background-color: #d9d9d99f;
+    color: rgb(5, 1, 1);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10PX;
+    justify-content: flex-start;
+    width: 130px;
+}
+
+/*CONTENEDOR PRINCIPAL*/
+article{
+    padding-left: 0px;
+    text-align: center;
+    justify-content: space-between;   
+}
+/*AQUI VAN LAS PELICULAS Y TODO LO QUE CAMBIA*/
+#contenedor2{
+display: inline-flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+
+}
+
+/*PAGINA INICIO*/
+.inicio{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+
+}
+.textWelcome{
+    background-color:#d9d9d983;
+    border-radius: 18px;
+}
+.welcome{
+    font-size: 16px;
+}
+.inicioImg{
+    width: 700px;
+    height: 120px;
+    justify-content: center;
+}
+
+
+/*SECCION PRINCIPAL DE CONTENEDOR DE PELICULAS, PARA VER TODAS Y TAMBIEN SELECCION DIRECTOR Y PRODUCTOR*/
+section{
+    background-color: #d9d9d99f;
+    cursor: pointer;
+    display: inline-block;
+    margin: 3%;
+    text-align: center;
+    width: 220px;
+    height: 320px;
+    font-size: 14px;
+    border-radius: 10%;
+    box-shadow: 0 1px 1px rgba(0,0,0,1); /*sombreado leve 
+    en la parte baja del borde 3d*/
+}
+
+section img{
+    width: 180px;
+    height: 240px;
+    border-radius:10%;
+    margin: 2%;
+   
+}
+section:hover{
+    transform: scale(1.15) translateZ(0);
+    background-size: 180px;
+}
+    
+
+/*BUTTON HISTORIA*/
+.history1{
+    width: 30%; /*para que ocupe mitad y mitad de contenedor*/
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    font-size: 10px;
+    color: #01031b;
+}
+h2{
+    font-size: 30px;
+}
+
+p{
+    font-size: 19px;
+    text-align: justify;
+}
+.history{
+    height: 70%; /*el 70% del body (100vb)*/
+    display: flex; /*para lograr que puedan quedar uno al lado del otro*/
+    justify-content: center;
+    padding: 20px; /*para darle espacio en los bordes a cada contenedor*/
+}
+
+.historyImg{
+    width: 30%;
+    background-color: #f0f8fd29;
+    padding: 15px 20px;
+    flex-direction: center;
+    margin-top: 60px;
+}
+
+.historyImg img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+/*SECCION PELICULAS Y VER DESCRIPCION*/
+
+.principal{
+    height: 70%; /*el 70% del body (100vb)*/
+    display: flex; /*para lograr que puedan quedar uno al lado del otro*/
+    padding: 40px; /*para darle espacio en los bordes a cada contenedor*/
+    align-content: center;
+
+}
+.texts{
+    width: 50%; /*para que ocupe mitad y mitad de contenedor*/
+    justify-content: center;
+    text-align: center;
+    margin-left: 10%;
+    display: block;
+    margin-top: 3%;
+
+}
+.title{
+    background-color:  #d9d9d99f;
+    margin-bottom: 3%;
+    padding: 15px 10px;
+    text-align: left;
+    width: 100%;
+    height: 5%;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius:10px;
+    margin-left: -2%;
+}
+.description{
+    background-color: #d9d9d99f;
+    padding: 10px;
+    text-align: justify;
+    width: 100%;
+    height: 77%;
+    font-size: 14px;
+    border-radius:10px;
+    overflow: hidden;
+    margin-left: -2%;
+    margin-top: 5%;
+}
+.picture{
+    background-color:  #d9d9d99f;
+    display: inline-block;
+    margin-top: 3%;
+    text-align: center;
+    width: 25%;
+    height: 85%;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 15px;
+    align-items: center;
+    margin-left: 4%;
+}
+.picture img{
+    width: 100%;
+    height: 100%;
+    border-radius:10px;
+    
+}
+
+.tittlePeople{
+    background-color:  #d9d9d99f;
+    margin-bottom: 3%;
+    padding: 15px 20px;
+    text-align: center;
+    width: 75%;
+    height: 15%;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 11%;
+    border-radius: 10px;
+
+}
+.characterName{
+    display: inline-block;
+    flex-wrap: wrap;
+    background-color:  #d9d9d99f;
+    padding: 0px 10px;
+    border-radius: 4%; 
+    margin-left: -3px;
+    height: 155px;
+}
+
+.nameImg img:hover{
+    transform: scale(1.4) translateZ(0);
+}
+
+.name{
+    font-size: 10px;
+    max-width: 80px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.nameImg img{
+    width: 80px;
+    height: 80px;
+    margin-bottom: -20%;
+    border-radius: 10%;
+}
+
+
+/*SELECCIONAR PELICULA Y VER PERSONAJES*/
+/*contenedor personajes*/
+#slider {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    margin: 0px 30px;
+}
+.title1{
+background-color:  #d9d9d99f;
+margin-left: 24%;
+margin-top: 5%;
+padding: 5px 10px;
+text-align: center;
+width: 50%;
+height: 5%;
+font-size: 25px;
+font-weight: 600;
+border-radius: 10px;
+justify-content: center;}
+
+.character{
+    padding-top: 40px;
+    padding-bottom: 0px;
+    text-align: center;
+    width: 220px;
+    height: 320px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 2%;
+    
+}
+.imgPeople img{
+    width: 150px;
+    height: 150px;
+    border-radius:50%;
+    z-index: 2;
+    margin: -20%;
+    border: solid 2px;
+    border-color: #000102;
+    
+}
+
+.character:hover{
+    transform: scale(1.15) translateZ(0);
+    background-size: 180px;
+
+}
+.information{
+    height: 169px;
+    color: #0e0d0d;
+    border-radius: 60px 30px 60px 30px;
+    box-shadow: 0 1px 1px rgba(0,0,0,1); /*sombreado leve 
+    en la parte baja del borde 3d*/
+    background-color:  #d9d9d99f;
+    z-index: 1;
+    padding-top: 8%;
+}
+
+@media screen and (max-width: 600px) {
+    header img{
+        width: 50% ;
+    }
+    header{
+        width: 100% ;
+    }
+    .dropbtn{
+      width: 100%;
+      font-size: 120%;
+    }
+    .dropbtnC{
+        width: 100%;
+        font-size: 120%;
+      }
+    .desplegables{
+        width: 100%;
+      font-size: 100%;
+    }
+    .dropdown-content{
+        width: 100%;
+    }
+    .dropdown-contentC{
+        width: 100%;
+    }
+    .option{
+        width: 100%;
+        font-size: 100%;
+    }
+    .optionC{
+        width: 100%;
+        font-size: 100%;
+    }
+    .dropdown {
+        width: 100%;
+    }
+    .dropdownC {
+        width: 100%;
+    }
+    #contenedor2
+    .seccion{
+        width: 100%;
+        height: 100%;}
+    .history{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .historyImg{
+        width: 90%;
+        height: 50%;
+        order: 2;
+    }
+    .historyImg img{
+        width: 250px;
+    }
+    .history1{
+        width: 90%;
+        display: inline;
+        order: 1;
+    }
+    .textWelcome {
+        width: 50%;
+        margin-left: 25%;
+    }
+    .inicioImg {
+        width: 75%;
+        height: 20%;
+    }
+    h2{
+        font-size: 150%;
+    }
+}
+
+footer{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+
+}
+
+.datosFooter{
+     font-size:small;
+     text-align: center;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     margin: 0px;
+    
+    }
