@@ -137,7 +137,7 @@ La aplicación web incia con un mensaje de bienvenida que invita a interactuar c
 ## 4. Link a Zeplin
 
 - El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando GitHub Pages [https://catherinefc21.github.io/Data-lovers/](url)
+  interfaz será desplegada usando GitHub Pages [Proyecto Data-lovers](https://catherinefc21.github.io/Data-lovers/)
 
 ## 5. Listado de problemas
 
