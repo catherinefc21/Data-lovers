@@ -183,6 +183,7 @@ display: inline-flex;
 /*SECCION PRINCIPAL DE CONTENEDOR DE PELICULAS, PARA VER TODAS Y TAMBIEN SELECCION DIRECTOR Y PRODUCTOR*/
 section{
     background-color: #d9d9d99f;
+    cursor: pointer;
     display: inline-block;
     margin: 3%;
     text-align: center;
