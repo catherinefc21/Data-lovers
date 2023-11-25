@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <img src="./img/logo.png" alt="logo">
+      <img src="./img/logo.png" alt="logo" />
     </header>
     <nav>
       <!--Boton history-->
@@ -16,64 +20,83 @@
       <button class="dropbtn" id="reiniciar">FILMS</button>
       <!--Boton productores-->
       <div class="desplegables">
-        <label for="typeProductors"  class="dropdown">
+        <label for="typeProductors" class="dropdown">
           <option class="dropbtn">PRODUCERS</option>
           <div class="dropdown-content">
-              <select name="typeProductors" id="typeProductors" class= "option">
-                <option value="Options" class="options">Please select</option>
-                <option value="Isao Takahata" class="option">Isao Takahata</option>
-                <option value="Hayao Miyazaki" class="option">Hayao Miyazaki</option>
-                <option value="Toru Hara" class="option">Toru Hara</option>
-                <option value="Toshio Suzuki" class="option">Toshio Suzuki</option>
-                <option value="Yoshiaki Nishimura" class="option">Yoshiaki</option>
+            <select name="typeProductors" id="typeProductors" class="option">
+              <option value="Options" class="options">Please select</option>
+              <option value="Isao Takahata" class="option">
+                Isao Takahata
+              </option>
+              <option value="Hayao Miyazaki" class="option">
+                Hayao Miyazaki
+              </option>
+              <option value="Toru Hara" class="option">Toru Hara</option>
+              <option value="Toshio Suzuki" class="option">
+                Toshio Suzuki
+              </option>
+              <option value="Yoshiaki Nishimura" class="option">
+                Yoshiaki
+              </option>
             </select>
           </div>
         </label>
       </div>
       <!--Boton directores-->
       <div class="desplegables">
-        <label for="typeDirectors"  class="dropdown">
-            <option class="dropbtn">DIRECTORS</option>
-            <div class="dropdown-content">
-              <select name="typeDirectors" id="typeDirectors" class="option" >
-                <option value="Options" class="options">Please select</option>
-                <option value="Hayao Miyazaki" class="option">Hayao Miyazaki</option>
-                <option value="Isao Takahata" class="option">Isao Takahata</option>
-                <option value="Yoshifumi Kondo" class= "option">Yoshifumi Kondo</option>
-                <option value="Hiroyuki Morita" class="option">Hiroyuki Morita</option>
-                <option value="Gorō Miyazaki" class="option">Gorō Miyazaki</option>
-                <option value="Hiromasa Yonebayashi" class="option">Hiromasa Yonebayashi</option>
-              </select>
-            </div>
-          </label>
+        <label for="typeDirectors" class="dropdown">
+          <option class="dropbtn">DIRECTORS</option>
+          <div class="dropdown-content">
+            <select name="typeDirectors" id="typeDirectors" class="option">
+              <option value="Options" class="options">Please select</option>
+              <option value="Hayao Miyazaki" class="option">
+                Hayao Miyazaki
+              </option>
+              <option value="Isao Takahata" class="option">
+                Isao Takahata
+              </option>
+              <option value="Yoshifumi Kondo" class="option">
+                Yoshifumi Kondo
+              </option>
+              <option value="Hiroyuki Morita" class="option">
+                Hiroyuki Morita
+              </option>
+              <option value="Gorō Miyazaki" class="option">
+                Gorō Miyazaki
+              </option>
+              <option value="Hiromasa Yonebayashi" class="option">
+                Hiromasa Yonebayashi
+              </option>
+            </select>
+          </div>
+        </label>
       </div>
       <!--Boton Personajes-->
       <div class="desplegables">
-        <label for="typeMovie"  class="dropdown">
+        <label for="typeMovie" class="dropdown">
           <option class="dropbtnC">CHARACTERS</option>
           <div class="dropdown-contentC">
             <select name="typeMovie" id="listMovies" class="optionC"></select>
           </div>
         </label>
       </div>
-      </nav>
+    </nav>
     <article>
       <!--Contenedor de tooodo-->
-      <div id="contenedor"></div> <!--DIV CONTENEDOR PELICULAS PAGINA PRINCIPAL-->
+      <div id="contenedor"></div>
+      <!--DIV CONTENEDOR PELICULAS PAGINA PRINCIPAL-->
     </article>
-      <footer>
+    <footer>
       <div class="datosFooter">
-        <h10><br><br><b>Creado por: Catherine Figueroa, Daniela Lara. Copyright 2023©</b></h10>
+        <h10
+          ><br /><br /><b
+            >Creado por: Catherine Figueroa, Daniela Lara. Copyright 2023©</b
+          ></h10
+        >
       </div>
     </footer>
-      <div id="root"></div><!--no tocar-->
+    <div id="root"></div>
+    <!--no tocar-->
     <script src="main.js" type="module"></script>
   </body>
 </html>
-
-
-
-
-
-
-
